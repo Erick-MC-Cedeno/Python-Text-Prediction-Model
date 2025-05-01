@@ -1,238 +1,219 @@
 {
-    "conversations": [
-
-      {
-        "prompt": " Hola",
-        "completion": "Hola como estas?",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "Ok",
-        "completion": "Hay algo mas en lo que pueda ayudarte?",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "Muy bien",
-        "completion": "Perfecto en que te puedo ayudar? ",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "¿Como estás?",
-        "completion": "Estoy bien, gracias. ¿Y tú?",
-        "intent": "saludos"
-      },
-
-
-      {
-        "prompt": "¿Cómo te va?",
-        "completion": "Todo bien, gracias. ¿Y tú?",
-        "intent": "saludos"
-      },
-
-
-      {
-        "prompt": "¿Qué tal?",
-        "completion": "Todo bien, gracias. ¿Y tú?",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "Perfecto gracias",
-        "completion": "Genial algo mas en lo que pueda ayudarte?",
-        "intent": "saludos"
-      },
-
-
-      {
-        "prompt": "¿Qué tal estás?",
-        "completion": "Todo bien, gracias. ¿Y tú?",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "¿Qué haces?",
-        "completion": "Aquí ayudando con tus preguntas. ¿En qué puedo ayudarte hoy?",
-        "intent": "saludos"
-      },
-      {
-        "prompt": "¿Cómo te llamas?",
-        "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
-        "intent": "saludos"
-      },
-        
-      
-
-      {
-        "prompt": "¿Qué puedes hacer?",
-        "completion": "Puedo responder preguntas, dar información y ayudarte con tareas relacionadas con Linux y seguridad informática.",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "¿Qué haces?",
-        "completion": "Aquí ayudando con tus preguntas. ¿En qué puedo ayudarte hoy?",
-        "intent": "saludos"
-      },
-      {
-        "prompt": "¿Cuál es tu nombre?",
-        "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
-        "intent": "saludos"
-      },
-      {
-        "prompt": "¿Qué puedes hacer?",
-        "completion": "Puedo responder preguntas, dar información y ayudarte con tareas relacionadas con Linux y seguridad informática.",
-        "intent": "saludos"
-      },
-
-      {
-        "prompt": "Que es Linux?",
-        "completion": "Linux es un sistema operativo de codigo abierto basado en Unix. Su nucleo (kernel) fue creado por Linus Torvalds en 1991. Es ampliamente usado en servidores, dispositivos embebidos y como alternativa a Windows/macOS.",
-        "intent": "sistema_operativo"
-      },
-      {
-        "prompt": "Que es un kernel?",
-        "completion": "El kernel es el nucleo de un sistema operativo. Gestiona recursos del hardware y permite la comunicacion entre el software y el hardware. Ejemplos: Linux, Windows NT, XNU (macOS).",
-        "intent": "kernel"
-      },
-      {
-        "prompt": "Comandos basicos de Linux",
-        "completion": "1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. cp - Copiar archivos\n4. mv - Mover/renombrar archivos\n5. rm - Eliminar archivos\n6. mkdir - Crear directorio\n7. rmdir - Eliminar directorio vacio\n8. touch - Crear archivo vacio",
-        "intent": "comandos_linux"
-      },
-      {
-        "prompt": "Que es un script?",
-        "completion": "Un script es un archivo de texto que contiene una secuencia de comandos o instrucciones que son ejecutadas por un interprete. Se usa para automatizar tareas repetitivas.",
-        "intent": "scripts"
-      },
-      {
-        "prompt": "Como crear un script en Linux",
-        "completion": "1. Crea un archivo con extension .sh (ej: script.sh)\n2. Escribe el shebang al inicio: #!/bin/bash\n3. Agrega tus comandos.\n4. Hazlo ejecutable: chmod +x script.sh\n5. Ejecuta: ./script.sh",
-        "intent": "scripts"
-      },
-      {
-        "prompt": "Lista comandos basicos de Bash",
-        "completion": "Comandos esenciales:\n1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. mkdir - Crear carpeta\n4. rm - Eliminar archivos\n5. grep - Buscar patrones\n6. chmod - Cambiar permisos\n7. sudo - Ejecutar como superusuario\n8. cat - Mostrar contenido de archivos",
-        "intent": "comandos_bash"
-      },
-      {
-        "prompt": "Que es una distribucion Linux?",
-        "completion": "Una distro es una variante de Linux que incluye el kernel + software. Ejemplos:\n- Ubuntu (para principiantes)\n- Kali (pentesting)\n- Debian (estabilidad)\n- Arch (personalizacion extrema)",
-        "intent": "sistema_operativo"
-      },
-      {
-        "prompt": "Como ver procesos en Linux",
-        "completion": "Usa el comando:\n\ntop\n\no\n\nps aux",
-        "intent": "comandos_linux"
-      },
-      {
-        "prompt": "Como ver el uso de disco en Linux",
-        "completion": "Usa el comando:\n\ndf -h\n\nPara ver uso de espacio en directorios:\n\ndu -sh /ruta/del/directorio",
-        "intent": "comandos_linux"
-      },
-      {
-        "prompt": "Que es un firewall?",
-        "completion": "Un firewall es un sistema de seguridad que controla el trafico de red, permitiendo o bloqueando paquetes basados en reglas predefinidas. Tipos: hardware, software, basado en host.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "Que es un VPN?",
-        "completion": "Una VPN (Virtual Private Network) crea una conexion segura y cifrada entre tu dispositivo e internet, protegiendo tu privacidad y permitiendo el acceso a redes remotas.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "Que es un proxy?",
-        "completion": "Un proxy actua como intermediario entre tu dispositivo e internet. Puede filtrar contenido, mejorar la seguridad y ocultar tu IP.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "¿Qué es nmap?",
-        "completion": "Nmap (Network Mapper) es una herramienta utilizada para escanear redes y puertos en busca de servicios disponibles, detectando vulnerabilidades y posibles brechas de seguridad.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Explícame qué hace nmap",
-        "completion": "Nmap es una herramienta de escaneo de redes que permite identificar dispositivos conectados a una red y explorar puertos abiertos para encontrar vulnerabilidades en los servicios expuestos.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "¿Para qué sirve nmap?",
-        "completion": "Nmap es una herramienta que sirve para explorar redes, detectar dispositivos y servicios activos, y realizar auditorías de seguridad.",
-        "intent": "hacking"
-      },
-      
-      {
-        "prompt": "Que es un IDS/IPS?",
-        "completion": "IDS (Intrusion Detection System) detecta intrusiones, mientras que IPS (Intrusion Prevention System) no solo detecta, sino que también previene ataques bloqueando el trafico malicioso.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "Que es un IDS?",
-        "completion": "Un IDS (Intrusion Detection System) es un sistema que monitorea el trafico de red o actividad del sistema para detectar actividades maliciosas o violaciones de politicas.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "Que es un IPS?",
-        "completion": "Un IPS (Intrusion Prevention System) es un sistema que no solo detecta intrusiones, sino que también toma medidas para prevenirlas, como bloquear el trafico sospechoso.",
-        "intent": "seguridad"
-      },
-      {
-        "prompt": "Que es el hacking etico",
-        "completion": "Es la practica de identificar vulnerabilidades en sistemas con autorizacion, para mejorar la seguridad. Certificaciones populares: CEH (Certified Ethical Hacker), OSCP.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Explica NMAP",
-        "completion": "Herramienta para escaneo de redes:\n\nnmap -sS 192.168.1.1\n\nOpciones:\n-sS: Escaneo sigiloso\n-p: Especificar puertos\n-A: Deteccion de SO/servicios",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Que es Metasploit?",
-        "completion": "Metasploit es un framework para desarrollar y ejecutar exploits contra sistemas remotos. Incluye modulos para escaneo, explotacion y post-explotacion.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Como escaneo vulnerabilidades con OpenVAS",
-        "completion": "1. Inicia OpenVAS/GVM.\n2. Crea un escaneo nuevo desde la interfaz web.\n3. Selecciona objetivos (IPs o rangos).\n4. Ejecuta el escaneo y revisa el reporte para CVEs y riesgos.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Que es OWASP?",
-        "completion": "OWASP (Open Web Application Security Project) es una comunidad sin fines de lucro que se dedica a mejorar la seguridad del software. Publica listas de vulnerabilidades y mejores practicas.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Explica XSS",
-        "completion": "Cross-Site Scripting (XSS) es una vulnerabilidad que permite inyectar scripts maliciosos en paginas web vistas por otros usuarios. Tipos: Reflejado, almacenado y DOM-based.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Que es CSRF",
-        "completion": "Cross-Site Request Forgery (CSRF) es un ataque que engaña a un usuario autenticado para que ejecute acciones no deseadas en una aplicacion web. Se previene usando tokens CSRF.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Que es SQL Injection",
-        "completion": "Es una vulnerabilidad que permite inyectar codigo SQL malicioso en consultas a bases de datos. Puede exfiltrar datos o modificar tablas.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Explica Burp Suite",
-        "completion": "Burp Suite es una plataforma de pruebas de seguridad web. Incluye proxy HTTP, scanner de vulnerabilidades y herramientas de manipulacion de peticiones.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Como protegerme contra XSS",
-        "completion": "1. Escapa y sanitiza entradas de usuario.\n2. Usa Content Security Policy (CSP).\n3. Valida y filtra datos en el servidor.",
-        "intent": "hacking"
-      },
-      {
-        "prompt": "Diferencia entre pentesting y hacking etico",
-        "completion": "El pentesting es un proceso estructurado de pruebas de seguridad con alcance y metodologia definidos. El hacking etico es un termino mas amplio que incluye pentesting y asesoria en seguridad.",
-        "intent": "hacking"
-      }
-    ]
-  }
-  
+  "conversations": [
+    {
+      "prompt": "Hola",
+      "completion": "Hola como estas?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Ok",
+      "completion": "Hay algo mas en lo que pueda ayudarte?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Muy bien",
+      "completion": "Perfecto en que te puedo ayudar?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Como estas?",
+      "completion": "Estoy bien, gracias. Y tu?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Como te va?",
+      "completion": "Todo bien, gracias. Y tu?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que tal?",
+      "completion": "Todo bien, gracias. Y tu?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Perfecto gracias",
+      "completion": "Genial algo mas en lo que pueda ayudarte?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que tal estas?",
+      "completion": "Todo bien, gracias. Y tu?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que haces?",
+      "completion": "Aqui ayudando con tus preguntas. En que puedo ayudarte hoy?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Como te llamas?",
+      "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que puedes hacer?",
+      "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que haces?",
+      "completion": "Aqui ayudando con tus preguntas. En que puedo ayudarte hoy?",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Cual es tu nombre?",
+      "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que puedes hacer?",
+      "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
+      "intent": "saludos"
+    },
+    {
+      "prompt": "Que es Linux?",
+      "completion": "Linux es un sistema operativo de codigo abierto basado en Unix. Su nucleo (kernel) fue creado por Linus Torvalds en 1991. Es ampliamente usado en servidores, dispositivos embebidos y como alternativa a Windows/macOS.",
+      "intent": "sistema_operativo"
+    },
+    {
+      "prompt": "Que es un kernel?",
+      "completion": "El kernel es el nucleo de un sistema operativo. Gestiona recursos del hardware y permite la comunicacion entre el software y el hardware. Ejemplos: Linux, Windows NT, XNU (macOS).",
+      "intent": "kernel"
+    },
+    {
+      "prompt": "Comandos basicos de Linux",
+      "completion": "1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. cp - Copiar archivos\n4. mv - Mover/renombrar archivos\n5. rm - Eliminar archivos\n6. mkdir - Crear directorio\n7. rmdir - Eliminar directorio vacio\n8. touch - Crear archivo vacio",
+      "intent": "comandos_linux"
+    },
+    {
+      "prompt": "Que es un script?",
+      "completion": "Un script es un archivo de texto que contiene una secuencia de comandos o instrucciones que son ejecutadas por un interprete. Se usa para automatizar tareas repetitivas.",
+      "intent": "scripts"
+    },
+    {
+      "prompt": "Como crear un script en Linux",
+      "completion": "1. Crea un archivo con extension .sh (ej: script.sh)\n2. Escribe el shebang al inicio: #!/bin/bash\n3. Agrega tus comandos.\n4. Hazlo ejecutable: chmod +x script.sh\n5. Ejecuta: ./script.sh",
+      "intent": "scripts"
+    },
+    {
+      "prompt": "Lista comandos basicos de Bash",
+      "completion": "Comandos esenciales:\n1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. mkdir - Crear carpeta\n4. rm - Eliminar archivos\n5. grep - Buscar patrones\n6. chmod - Cambiar permisos\n7. sudo - Ejecutar como superusuario\n8. cat - Mostrar contenido de archivos",
+      "intent": "comandos_bash"
+    },
+    {
+      "prompt": "Que es una distribucion Linux?",
+      "completion": "Una distro es una variante de Linux que incluye el kernel + software. Ejemplos:\n- Ubuntu (para principiantes)\n- Kali (pentesting)\n- Debian (estabilidad)\n- Arch (personalizacion extrema)",
+      "intent": "sistema_operativo"
+    },
+    {
+      "prompt": "Como ver procesos en Linux",
+      "completion": "Usa el comando:\n\ntop\n\no\n\nps aux",
+      "intent": "comandos_linux"
+    },
+    {
+      "prompt": "Como ver el uso de disco en Linux",
+      "completion": "Usa el comando:\n\ndf -h\n\nPara ver uso de espacio en directorios:\n\ndu -sh /ruta/del/directorio",
+      "intent": "comandos_linux"
+    },
+    {
+      "prompt": "Que es un firewall?",
+      "completion": "Un firewall es un sistema de seguridad que controla el trafico de red, permitiendo o bloqueando paquetes basados en reglas predefinidas. Tipos: hardware, software, basado en host.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un VPN?",
+      "completion": "Una VPN (Virtual Private Network) crea una conexion segura y cifrada entre tu dispositivo e internet, protegiendo tu privacidad y permitiendo el acceso a redes remotas.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un proxy?",
+      "completion": "Un proxy actua como intermediario entre tu dispositivo e internet. Puede filtrar contenido, mejorar la seguridad y ocultar tu IP.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es nmap?",
+      "completion": "Nmap (Network Mapper) es una herramienta utilizada para escanear redes y puertos en busca de servicios disponibles, detectando vulnerabilidades y posibles brechas de seguridad.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Explicame que hace nmap",
+      "completion": "Nmap es una herramienta de escaneo de redes que permite identificar dispositivos conectados a una red y explorar puertos abiertos para encontrar vulnerabilidades en los servicios expuestos.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Para que sirve nmap?",
+      "completion": "Nmap es una herramienta que sirve para explorar redes, detectar dispositivos y servicios activos, y realizar auditorias de seguridad.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un IDS/IPS?",
+      "completion": "IDS (Intrusion Detection System) detecta intrusiones, mientras que IPS (Intrusion Prevention System) no solo detecta, sino que tambien previene ataques bloqueando el trafico malicioso.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un IDS?",
+      "completion": "Un IDS (Intrusion Detection System) es un sistema que monitorea el trafico de red o actividad del sistema para detectar actividades maliciosas o violaciones de politicas.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un IPS?",
+      "completion": "Un IPS (Intrusion Prevention System) es un sistema que no solo detecta intrusiones, sino que tambien toma medidas para prevenirlas, como bloquear el trafico sospechoso.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es el hacking etico",
+      "completion": "Es la practica de identificar vulnerabilidades en sistemas con autorizacion, para mejorar la seguridad. Certificaciones populares: CEH (Certified Ethical Hacker), OSCP.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Explica NMAP",
+      "completion": "Herramienta para escaneo de redes:\n\nnmap -sS 192.168.1.1\n\nOpciones:\n-sS: Escaneo sigiloso\n-p: Especificar puertos\n-A: Deteccion de SO/servicios",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es Metasploit?",
+      "completion": "Metasploit es un framework para desarrollar y ejecutar exploits contra sistemas remotos. Incluye modulos para escaneo, explotacion y post-explotacion.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Como escaneo vulnerabilidades con OpenVAS",
+      "completion": "1. Inicia OpenVAS/GVM.\n2. Crea un escaneo nuevo desde la interfaz web.\n3. Selecciona objetivos (IPs o rangos).\n4. Ejecuta el escaneo y revisa el reporte para CVEs y riesgos.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es OWASP?",
+      "completion": "OWASP (Open Web Application Security Project) es una comunidad sin fines de lucro que se dedica a mejorar la seguridad del software. Publica listas de vulnerabilidades y mejores practicas.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Explica XSS",
+      "completion": "Cross-Site Scripting (XSS) es una vulnerabilidad que permite inyectar scripts maliciosos en paginas web vistas por otros usuarios. Tipos: Reflejado, almacenado y DOM-based.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es CSRF",
+      "completion": "Cross-Site Request Forgery (CSRF) es un ataque que engaña a un usuario autenticado para que ejecute acciones no deseadas en una aplicacion web. Se previene usando tokens CSRF.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es SQL Injection",
+      "completion": "Es una vulnerabilidad que permite inyectar codigo SQL malicioso en consultas a bases de datos. Puede exfiltrar datos o modificar tablas.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Explica Burp Suite",
+      "completion": "Burp Suite es una plataforma de pruebas de seguridad web. Incluye proxy HTTP, scanner de vulnerabilidades y herramientas de manipulacion de peticiones.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Como protegerme contra XSS",
+      "completion": "1. Escapa y sanitiza entradas de usuario.\n2. Usa Content Security Policy (CSP).\n3. Valida y filtra datos en el servidor.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Diferencia entre pentesting y hacking etico",
+      "completion": "El pentesting es un proceso estructurado de pruebas de seguridad con alcance y metodologia definidos. El hacking etico es un termino mas amplio que incluye pentesting y asesoria en seguridad.",
+      "intent": "hacking"
+    }
+  ]
+}
