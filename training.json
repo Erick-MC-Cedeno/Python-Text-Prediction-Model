@@ -20,7 +20,7 @@
       },
 
       {
-        "prompt": "¿Cómo estás?",
+        "prompt": "¿Como estás?",
         "completion": "Estoy bien, gracias. ¿Y tú?",
         "intent": "saludos"
       },
