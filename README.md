@@ -20,7 +20,8 @@ Un pequeño chatbot basado en un Bidirectional LSTM con fallback por Jaccard, en
 
 ---
 
-## 📁 Estructura del repositorio
+## 📁 Estructura del bot diagrama
+![botdiagrama](./Diagrama/diagrama.png)
 
 
 ---
