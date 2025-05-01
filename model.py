@@ -14,22 +14,23 @@ from sklearn.model_selection import KFold
 import time
 import sys
 
-# 🔧 CONFIGURACIÓN
+
+
+# CONFIGURACIÓN DE PARAMETROS
 VOCAB_SIZE       = 300
-EMBEDDING_DIM    = 100    # Para FastText pre-entrenado (si se usa)
+EMBEDDING_DIM    = 100   
 MAX_LEN          = 12
 NUM_NEURONS      = 32
 EPOCHS           = 80
 BATCH_SIZE       = 8
-INITIAL_LR       = 1e-4   # LR inicial bajo
+INITIAL_LR       = 1e-4   
 DROPOUT_RATE     = 0.5
 L2_RATE          = 1e-3
 JACCARD_THRESH   = 0.2
 VALIDATION_SPLIT = 0.2
 KFOLDS           = 5
 
-# --- FUNCIONES AUXILIARES ---
-
+# FUNCIONES AUXILIARES ---
 def warmup_scheduler(epoch, lr):
     # LR Warm-up: incrementar gradualmente durante primeras 5 épocas
     if epoch < 5:
@@ -37,6 +38,7 @@ def warmup_scheduler(epoch, lr):
     return lr
 
 
+# NORMALIZAR TEXTO
 def normalize_text(text):
     text = text.lower()
     text = unicodedata.normalize('NFC', text)
@@ -44,21 +46,26 @@ def normalize_text(text):
     return re.sub(r'\s+', ' ', text).strip()
 
 
+# AUGMENTAR DATOS
 def augment_texts(texts, completions):
     # Ejemplo: duplicar dataset (puedes reemplazar con back-translation o sinónimos)
     return texts + texts, completions + completions
 
 
+# CALCULAR JACCARD
 def jaccard_similarity(a, b):
     inter = a & b
     uni = a | b
     return len(inter) / len(uni) if uni else 0
 
 
+# EXTRAER PALABRAS CLAVE
 def extract_keywords(text):
     return set(normalize_text(text).split())
 
-# Cargar FastText (opcional)
+
+
+# CARGAR FASTTEXT (OPCIONAL)
 def load_fasttext(path, word_index, dim):
     matrix = np.zeros((VOCAB_SIZE, dim))
     with open(path, 'r', encoding='utf-8') as f:
@@ -70,7 +77,9 @@ def load_fasttext(path, word_index, dim):
                 matrix[word_index[word]] = np.array(vals[1:], dtype='float32')
     return matrix
 
-# --- CARGA Y PROCESO DE DATOS ---
+
+
+#  CARGA Y PROCESO DE DATOS ---
 with open('training.json', 'r', encoding='utf-8') as f:
     data = json.load(f)['conversations']
 raw_prompts = [c['prompt'] for c in data]
@@ -78,27 +87,34 @@ raw_completions = [c['completion'].strip() for c in data]
 prompts = [normalize_text(p) for p in raw_prompts]
 prompt_sets = [set(p.split()) for p in prompts]
 
-# Data augmentation
+# DATA AUGMENTACIÓN
 prompts_aug, completions_aug = augment_texts(prompts, raw_completions)
 
-# Tokenización
+
+# TOKENIZACIÓN
 tokenizer = Tokenizer(num_words=VOCAB_SIZE, oov_token='<OOV>')
 tokenizer.fit_on_texts(prompts_aug)
 oov_index = tokenizer.word_index[tokenizer.oov_token]
 seqs = tokenizer.texts_to_sequences(prompts_aug)
 padded_inputs = pad_sequences(seqs, maxlen=MAX_LEN, padding='post')
 
-# Codificación de salidas
+
+
+# CODIFICACIÓN DE SALIDAS
 distinct_responses = sorted(set(completions_aug))
 resp2idx = {r:i for i,r in enumerate(distinct_responses)}
 y_indices = np.array([resp2idx[c] for c in completions_aug])
 y_onehot = to_categorical(y_indices, num_classes=len(distinct_responses))
 
-# Carga embeddings si lo deseas
-# embedding_matrix = load_fasttext('cc.es.300.vec', tokenizer.word_index, EMBEDDING_DIM)
+
+
+# CARGA EMBEDDINGS SI LO DESEAS
+# EMBEDDING_MATRIX = load_fasttext('cc.es.300.vec', tokenizer.word_index, EMBEDDING_DIM)
 embedding_matrix = None
 
-# Construye el modelo
+
+
+# CONSTRUYE EL MODELO
 def build_model(embedding_matrix=None):
     layers = []
     if embedding_matrix is not None:
@@ -123,7 +139,7 @@ def build_model(embedding_matrix=None):
     )
     return m
 
-# Callbacks comunes
+# CALLBACKS COMUNES
 callbacks = [
     ModelCheckpoint('best_model.keras', save_best_only=True, monitor='val_loss', verbose=1),
     EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True, verbose=1),
@@ -131,7 +147,7 @@ callbacks = [
     LearningRateScheduler(warmup_scheduler)
 ]
 
-# Cross-validation training
+# CROSS-VALIDACIÓN DE TRAINING
 kf = KFold(n_splits=KFOLDS, shuffle=True, random_state=42)
 histories = []
 for train_idx, val_idx in kf.split(padded_inputs):
@@ -148,7 +164,8 @@ for train_idx, val_idx in kf.split(padded_inputs):
     )
     histories.append(h)
 
-# Entrenamiento final con validación
+
+# ENTRENAMIENTO FINAL CON VALIDACIÓN
 final_model = build_model(embedding_matrix)
 history_final = final_model.fit(
     padded_inputs, y_onehot,
@@ -160,7 +177,8 @@ history_final = final_model.fit(
 )
 final_model.save('chatbot_model_final.keras')
 
-# Generación de respuesta y consola
+
+# GENERACIÓN DE RESPUESTA Y CONSOLA
 def generate_response(user_text):
     # Fallback por Jaccard
     kw = extract_keywords(user_text)
@@ -169,7 +187,8 @@ def generate_response(user_text):
     if best_sim > JACCARD_THRESH:
         return raw_completions[best_i]
 
-    # Modelo LSTM
+
+    # MODELO LSTM
     seq = tokenizer.texts_to_sequences([normalize_text(user_text)])[0]
     if oov_index in seq:
         return "Lo siento, no te entendí."
@@ -179,6 +198,7 @@ def generate_response(user_text):
     return distinct_responses[idx] if pred[idx] >= 0.3 else "Lo siento, no te entendí."
 
 
+# SIMULACIÓN DE RESPUESTA DE AI CON DELAY
 def simulate_typing(text, delay=0.03):
     for c in text:
         sys.stdout.write(c)
@@ -187,6 +207,7 @@ def simulate_typing(text, delay=0.03):
     print()
 
 
+# MAIN
 if __name__ == '__main__':
     print("Chatbot listo. Escribe 'salir' para terminar.")
     while True:
