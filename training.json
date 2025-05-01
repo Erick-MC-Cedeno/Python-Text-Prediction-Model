@@ -3,12 +3,12 @@
 
       {
         "prompt": " Hola",
-        "completion": "¡Hola! ¿Como estas?",
+        "completion": "Hola como estas?",
         "intent": "saludos"
       },
 
       {
-        "prompt": "ok",
+        "prompt": "Ok",
         "completion": "Hay algo mas en lo que pueda ayudarte?",
         "intent": "saludos"
       },
@@ -38,6 +38,14 @@
         "completion": "Todo bien, gracias. ¿Y tú?",
         "intent": "saludos"
       },
+
+      {
+        "prompt": "Perfecto gracias",
+        "completion": "Genial algo mas en lo que pueda ayudarte?",
+        "intent": "saludos"
+      },
+
+
       {
         "prompt": "¿Qué tal estás?",
         "completion": "Todo bien, gracias. ¿Y tú?",
