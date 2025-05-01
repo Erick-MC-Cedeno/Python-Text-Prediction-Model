@@ -14,15 +14,18 @@ from sklearn.feature_extraction.text import CountVectorizer
 import time 
 import sys
 
-# Hiperparámetros
-VOCAB_SIZE = 7000
-EMBEDDING_DIM = 256
-MAX_LEN = 60
-NUM_NEURONS = 512
-EPOCHS = 120
-BATCH_SIZE = 16
-THRESHOLD = 0.4
-SEGMENT_THRESHOLD = 0.3
+# 🔧 AJUSTES PARA DATOS PEQUEÑOS/MEDIANOS
+VOCAB_SIZE = 500
+EMBEDDING_DIM = 16
+MAX_LEN = 15
+NUM_NEURONS = 64
+EPOCHS = 30
+BATCH_SIZE = 4
+LEARNING_RATE = 1e-4
+DROPOUT_RATE = 0.5
+THRESHOLD = 0.85
+SEGMENT_THRESHOLD = 0.5
+VALIDATION_SPLIT = 0.3
 
 # NORMALIZAR EL TEXTO
 def normalize_text(text):
@@ -37,10 +40,13 @@ def normalize_text(text):
 # CARGAR Y PROCESAR DATOS DE ENTRENAMIENTO
 with open("training.json", "r", encoding="utf-8") as f:
     data = json.load(f)
+
 training_data = data["conversations"]
+
 raw_prompts = [conv["prompt"] for conv in training_data]
 prompts = [normalize_text(p) for p in raw_prompts]
 completions = [conv["completion"].strip() for conv in training_data]
+intents = [conv["intent"] for conv in training_data]
 prompt_token_sets = [set(p.split()) for p in prompts]
 
 # TOKENIZACION
@@ -57,18 +63,22 @@ idx2resp = {i: resp for resp, i in resp2idx.items()}
 y_indices = np.array([resp2idx[c] for c in completions])
 y = to_categorical(y_indices, num_classes=len(responses))
 
+# GUARDAR MAPEOS PARA USO FUTURO
+with open("response_mapping.json", "w", encoding="utf-8") as f:
+    json.dump(idx2resp, f, ensure_ascii=False, indent=2)
+
 # MODELO SECUENCIAL
 model = Sequential([
     Embedding(input_dim=VOCAB_SIZE, output_dim=EMBEDDING_DIM, input_length=MAX_LEN, mask_zero=True),
     Bidirectional(LSTM(NUM_NEURONS, return_sequences=True)),
-    Dropout(0.3),
+    Dropout(DROPOUT_RATE),
     Bidirectional(LSTM(NUM_NEURONS // 2)),
     Dense(NUM_NEURONS, activation='relu'),
-    Dropout(0.3),
+    Dropout(DROPOUT_RATE),
     Dense(len(responses), activation='softmax')
 ])
 
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=LEARNING_RATE),
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
@@ -104,34 +114,36 @@ def jaccard_similarity(set1, set2):
     union = set1 | set2
     return len(inter) / len(union) if union else 0
 
-# FUNCION PARA EXTRAER PALABRAS PRINCIPALES
-def extract_keywords(text, top_k=6):
+# EXTRAER PALABRAS CLAVE
+def extract_keywords(text, top_k=10):  # Aumentamos el top_k para extraer más palabras
     norm = normalize_text(text)
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform([norm])
     words = vectorizer.get_feature_names_out()
     return set(words[:top_k]) if len(words) >= 2 else set(words)
 
-# GENERAR UNA RESPUESTA
+    
+# GENERAR RESPUESTA
 def generate_response(input_text):
     norm = normalize_text(input_text)
-
-    # COINCIDENCIA DE PALABRAS
     keyword_set = extract_keywords(norm)
+
     match_scores = [
         (i, jaccard_similarity(keyword_set, pts), pts & keyword_set)
         for i, pts in enumerate(prompt_token_sets)
     ]
 
-    # BUSCA LA MEJOR COINCIDENCIA DE AL MENOS 2 PALABRAS
     best_idx, best_sim, overlap = max(match_scores, key=lambda x: x[1])
-    if len(overlap) >= 2 and best_sim >= SEGMENT_THRESHOLD:
-        return completions[best_idx]
 
-    # SI NO IR A EL MODELO
+    if len(overlap) >= 2 and best_sim >= SEGMENT_THRESHOLD:
+        response = completions[best_idx]
+        intent = intents[best_idx]
+        return f"{response} (intención: {intent})"
+
     seq = tokenizer.texts_to_sequences([norm])[0]
     if oov_index in seq:
         return "Lo siento, no te entendí."
+
     pad = pad_sequences([seq], maxlen=MAX_LEN, padding='post')
     pred = model.predict(pad, verbose=0)[0]
     idx = np.argmax(pred)
@@ -139,7 +151,7 @@ def generate_response(input_text):
         return "Lo siento, no te entendí."
     return idx2resp[idx]
 
-# SIMULACION DE RESPUESTA DE AI CON DELAY
+# SIMULACION DE RESPUESTA
 def simulate_typing(text, delay=0.03):
     for char in text:
         sys.stdout.write(char)
