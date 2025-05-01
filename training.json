@@ -4,6 +4,23 @@
             "prompt": "Que es Linux?",
             "completion": "Linux es un sistema operativo de codigo abierto basado en Unix. Su nucleo (kernel) fue creado por Linus Torvalds en 1991. Es ampliamente usado en servidores, dispositivos embebidos y como alternativa a Windows/macOS."
         },
+
+        {
+            "prompt": "Que es un kernel?",
+            "completion": "El kernel es el nucleo de un sistema operativo. Gestiona recursos del hardware y permite la comunicacion entre el software y el hardware. Ejemplos: Linux, Windows NT, XNU (macOS)."
+        },
+        {
+            "prompt": "Comandos basicos de Linux",
+            "completion": "1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. cp - Copiar archivos\n4. mv - Mover/renombrar archivos\n5. rm - Eliminar archivos\n6. mkdir - Crear directorio\n7. rmdir - Eliminar directorio vacio\n8. touch - Crear archivo vacio"
+        },
+        {
+            "prompt": "Que es un script?",
+            "completion": "Un script es un archivo de texto que contiene una secuencia de comandos o instrucciones que son ejecutadas por un interprete. Se usa para automatizar tareas repetitivas."
+        },
+        {
+            "prompt": "Como crear un script en Linux",
+            "completion": "1. Crea un archivo con extension .sh (ej: script.sh)\n2. Escribe el shebang al inicio: #!/bin/bash\n3. Agrega tus comandos.\n4. Hazlo ejecutable: chmod +x script.sh\n5. Ejecuta: ./script.sh"
+        },
         {
             "prompt": "Lista comandos basicos de Bash",
             "completion": "Comandos esenciales:\n1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. mkdir - Crear carpeta\n4. rm - Eliminar archivos\n5. grep - Buscar patrones\n6. chmod - Cambiar permisos\n7. sudo - Ejecutar como superusuario\n8. cat - Mostrar contenido de archivos"
@@ -15,6 +32,36 @@
         {
             "prompt": "Como ver procesos en Linux",
             "completion": "Usa el comando:\n\ntop\n\no\n\nps aux"
+        },
+        {
+            "prompt": "Como ver el uso de disco en Linux",
+            "completion": "Usa el comando:\n\ndf -h\n\nPara ver uso de espacio en directorios:\n\ndu -sh /ruta/del/directorio"
+        },
+        {
+            "prompt": "Que es un firewall?",
+            "completion": "Un firewall es un sistema de seguridad que controla el trafico de red, permitiendo o bloqueando paquetes basados en reglas predefinidas. Tipos: hardware, software, basado en host."
+        },
+
+        {
+            "prompt": "Que es un VPN?",
+            "completion": "Una VPN (Virtual Private Network) crea una conexion segura y cifrada entre tu dispositivo e internet, protegiendo tu privacidad y permitiendo el acceso a redes remotas."
+        },
+        {
+            "prompt": "Que es un proxy?",
+            "completion": "Un proxy actua como intermediario entre tu dispositivo e internet. Puede filtrar contenido, mejorar la seguridad y ocultar tu IP."
+        },
+        {
+            "prompt": "Que es un IDS/IPS?",
+            "completion": "IDS (Intrusion Detection System) detecta intrusiones, mientras que IPS (Intrusion Prevention System) no solo detecta, sino que también previene ataques bloqueando el trafico malicioso."
+        },
+        
+        {
+            "prompt": "Que es un IDS?",
+            "completion": "Un IDS (Intrusion Detection System) es un sistema que monitorea el trafico de red o actividad del sistema para detectar actividades maliciosas o violaciones de politicas."
+        },
+        {
+            "prompt": "Que es un IPS?",
+            "completion": "Un IPS (Intrusion Prevention System) es un sistema que no solo detecta intrusiones, sino que también toma medidas para prevenirlas, como bloquear el trafico sospechoso."
         },
         {
             "prompt": "Que es el hacking etico",
@@ -31,6 +78,19 @@
         {
             "prompt": "Como escaneo vulnerabilidades con OpenVAS",
             "completion": "1. Inicia OpenVAS/GVM.\n2. Crea un escaneo nuevo desde la interfaz web.\n3. Selecciona objetivos (IPs o rangos).\n4. Ejecuta el escaneo y revisa el reporte para CVEs y riesgos."
+        },
+
+        {
+            "prompt": "Que es OWASP?",
+            "completion": "OWASP (Open Web Application Security Project) es una comunidad sin fines de lucro que se dedica a mejorar la seguridad del software. Publica listas de vulnerabilidades y mejores practicas."
+        },
+        {
+            "prompt": "Explica XSS",
+            "completion": "Cross-Site Scripting (XSS) es una vulnerabilidad que permite inyectar scripts maliciosos en paginas web vistas por otros usuarios. Tipos: Reflejado, almacenado y DOM-based."
+        },
+        {
+            "prompt": "Que es CSRF",
+            "completion": "Cross-Site Request Forgery (CSRF) es un ataque que engaña a un usuario autenticado para que ejecute acciones no deseadas en una aplicacion web. Se previene usando tokens CSRF."
         },
         {
             "prompt": "Que es SQL Injection",
@@ -52,6 +112,26 @@
             "prompt": "hola",
             "completion": "¡Hola! ¿Como estas?"
         },
+
+
+
+        {
+            "prompt": "adios",
+            "completion": "¡Adios! Que tengas un buen dia."
+        },
+        {
+            "prompt": "como estas",
+            "completion": "Estoy bien, gracias. ¿Y tu?"
+        },
+        {
+            "prompt": "que tal",
+            "completion": "Todo bien, gracias. ¿Y tu?"
+        },
+        {
+            "prompt": "buenas",
+            "completion": "¡Buenas! ¿En que puedo ayudarte?"
+        },
+
         {
             "prompt": "buenos dias",
             "completion": "¡Buenos dias! ¿En que puedo ayudarte hoy?"
@@ -103,6 +183,124 @@
         {
             "prompt": "gracias",
             "completion": "¡De nada! Para eso estoy."
+        },
+
+        {
+            "prompt": "por favor",
+            "completion": "¡Claro! Estoy aqui para ayudarte."
+        },
+        {
+            "prompt": "de nada",
+            "completion": "¡Gracias a ti! ¿Algo mas en lo que pueda ayudar?"
+        },
+        {
+            "prompt": "no hay problema",
+            "completion": "¡Perfecto! Si necesitas algo, no dudes en preguntar."
+        },
+        {
+            "prompt": "todo bien",
+            "completion": "¡Me alegra escuchar eso! ¿En que puedo ayudarte hoy?"
+        }
+        ,
+        {
+            "prompt": "todo mal",
+            "completion": "Lo siento mucho. Si necesitas hablar o ayuda, estoy aqui."
+        },
+        {
+            "prompt": "que haces",
+            "completion": "Estoy aqui para ayudarte con cualquier pregunta o tema que necesites."
+        },
+        {
+            "prompt": "que tal tu dia",
+            "completion": "Mi dia va bien, gracias. ¿Y el tuyo?"
+        },
+        {
+            "prompt": "cual es tu nombre",
+            "completion": "Soy un asistente virtual creado para ayudarte."
+        }
+        ,
+        {
+            "prompt": "cuantos años tienes",
+            "completion": "No tengo edad, soy un programa de inteligencia artificial."
+        },
+        {
+            "prompt": "donde vives",
+            "completion": "Vivo en la nube, siempre disponible para ayudarte."
+        },
+        {
+            "prompt": "que te gusta hacer",
+            "completion": "Me gusta ayudar a las personas a encontrar respuestas y resolver problemas."
+        }
+        ,
+        {
+            "prompt": "cual es tu comida favorita",
+            "completion": "No como, pero me gusta aprender sobre diferentes tipos de comida."
+        },
+        {
+            "prompt": "cual es tu color favorito",
+            "completion": "No tengo preferencias, pero me gusta el azul por su asociacion con la tecnologia."
+        },
+        {
+            "prompt": "cual es tu hobby",
+            "completion": "Mi hobby es aprender y ayudar a los demas."
+        }
+        ,
+        {
+            "prompt": "cual es tu deporte favorito",
+            "completion": "No practico deportes, pero me gusta aprender sobre ellos."
+        },
+        {
+            "prompt": "cual es tu pelicula favorita",
+            "completion": "No veo peliculas, pero he leido sobre muchas."
+        },
+        {
+            "prompt": "cual es tu libro favorito",
+            "completion": "No leo libros, pero tengo acceso a muchos textos y recursos."
+        }
+        ,
+        {
+            "prompt": "cual es tu musica favorita",
+            "completion": "No escucho musica, pero puedo ayudarte a encontrar recomendaciones."
+        },
+        {
+            "prompt": "cual es tu serie favorita",
+            "completion": "No veo series, pero puedo hablarte sobre muchas populares."
+        }
+        ,
+        {
+            "prompt": "cual es tu artista favorito",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchos artistas."
+        },
+        {
+            "prompt": "cual es tu actor favorito",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchos actores."
+        }
+        ,
+        {
+            "prompt": "cual es tu actriz favorita",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchas actrices."
+        },
+        {
+            "prompt": "cual es tu cantante favorito",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchos cantantes."
+        }
+        ,
+        {
+            "prompt": "cual es tu banda favorita",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchas bandas."
+        },
+        {
+            "prompt": "cual es tu grupo favorito",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchos grupos."
+        }
+        ,
+        {
+            "prompt": "cual es tu cancion favorita",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchas canciones."
+        },
+        {
+            "prompt": "cual es tu programa favorito",
+            "completion": "No tengo preferencias, pero puedo hablarte sobre muchos programas."
         }
     ]
 }
