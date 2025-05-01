@@ -31,21 +31,32 @@
         "completion": "Todo bien, gracias. ¿Y tú?",
         "intent": "saludos"
       },
+
+
       {
         "prompt": "¿Qué tal?",
         "completion": "Todo bien, gracias. ¿Y tú?",
         "intent": "saludos"
       },
       {
+        "prompt": "¿Qué tal estás?",
+        "completion": "Todo bien, gracias. ¿Y tú?",
+        "intent": "saludos"
+      },
+
+      {
         "prompt": "¿Qué haces?",
         "completion": "Aquí ayudando con tus preguntas. ¿En qué puedo ayudarte hoy?",
         "intent": "saludos"
       },
       {
-        "prompt": "¿Cuál es tu nombre?",
+        "prompt": "¿Cómo te llamas?",
         "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
         "intent": "saludos"
       },
+        
+      
+
       {
         "prompt": "¿Qué puedes hacer?",
         "completion": "Puedo responder preguntas, dar información y ayudarte con tareas relacionadas con Linux y seguridad informática.",
