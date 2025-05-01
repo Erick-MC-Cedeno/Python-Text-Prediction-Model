@@ -1,0 +1,108 @@
+{
+    "conversations": [
+        {
+            "prompt": "Que es Linux?",
+            "completion": "Linux es un sistema operativo de codigo abierto basado en Unix. Su nucleo (kernel) fue creado por Linus Torvalds en 1991. Es ampliamente usado en servidores, dispositivos embebidos y como alternativa a Windows/macOS."
+        },
+        {
+            "prompt": "Lista comandos basicos de Bash",
+            "completion": "Comandos esenciales:\n1. ls - Listar archivos\n2. cd - Cambiar directorio\n3. mkdir - Crear carpeta\n4. rm - Eliminar archivos\n5. grep - Buscar patrones\n6. chmod - Cambiar permisos\n7. sudo - Ejecutar como superusuario\n8. cat - Mostrar contenido de archivos"
+        },
+        {
+            "prompt": "Que es una distribucion Linux?",
+            "completion": "Una distro es una variante de Linux que incluye el kernel + software. Ejemplos:\n- Ubuntu (para principiantes)\n- Kali (pentesting)\n- Debian (estabilidad)\n- Arch (personalizacion extrema)"
+        },
+        {
+            "prompt": "Como ver procesos en Linux",
+            "completion": "Usa el comando:\n\ntop\n\no\n\nps aux"
+        },
+        {
+            "prompt": "Que es el hacking etico",
+            "completion": "Es la practica de identificar vulnerabilidades en sistemas con autorizacion, para mejorar la seguridad. Certificaciones populares: CEH (Certified Ethical Hacker), OSCP."
+        },
+        {
+            "prompt": "Explica NMAP",
+            "completion": "Herramienta para escaneo de redes:\n\nnmap -sS 192.168.1.1\n\nOpciones:\n-sS: Escaneo sigiloso\n-p: Especificar puertos\n-A: Deteccion de SO/servicios"
+        },
+        {
+            "prompt": "Que es Metasploit?",
+            "completion": "Metasploit es un framework para desarrollar y ejecutar exploits contra sistemas remotos. Incluye modulos para escaneo, explotacion y post-explotacion."
+        },
+        {
+            "prompt": "Como escaneo vulnerabilidades con OpenVAS",
+            "completion": "1. Inicia OpenVAS/GVM.\n2. Crea un escaneo nuevo desde la interfaz web.\n3. Selecciona objetivos (IPs o rangos).\n4. Ejecuta el escaneo y revisa el reporte para CVEs y riesgos."
+        },
+        {
+            "prompt": "Que es SQL Injection",
+            "completion": "Es una vulnerabilidad que permite inyectar codigo SQL malicioso en consultas a bases de datos. Puede exfiltrar datos o modificar tablas."
+        },
+        {
+            "prompt": "Explica Burp Suite",
+            "completion": "Burp Suite es una plataforma de pruebas de seguridad web. Incluye proxy HTTP, scanner de vulnerabilidades y herramientas de manipulacion de peticiones."
+        },
+        {
+            "prompt": "Como protegerme contra XSS",
+            "completion": "1. Escapa y sanitiza entradas de usuario.\n2. Usa Content Security Policy (CSP).\n3. Valida y filtra datos en el servidor."
+        },
+        {
+            "prompt": "Diferencia entre pentesting y hacking etico",
+            "completion": "El pentesting es un proceso estructurado de pruebas de seguridad con alcance y metodologia definidos. El hacking etico es un termino mas amplio que incluye pentesting y asesoria en seguridad."
+        },
+        {
+            "prompt": "hola",
+            "completion": "¡Hola! ¿Como estas?"
+        },
+        {
+            "prompt": "buenos dias",
+            "completion": "¡Buenos dias! ¿En que puedo ayudarte hoy?"
+        },
+        {
+            "prompt": "buenas tardes",
+            "completion": "¡Buenas tardes! Aqui estoy para ayudarte."
+        },
+        {
+            "prompt": "buenas noches",
+            "completion": "¡Buenas noches! ¿Necesitas algo antes de descansar?"
+        },
+        {
+            "prompt": "feliz lunes",
+            "completion": "¡Feliz lunes! Que tengas una excelente semana."
+        },
+        {
+            "prompt": "feliz martes",
+            "completion": "¡Feliz martes! ¿En que puedo asistirte hoy?"
+        },
+        {
+            "prompt": "feliz miercoles",
+            "completion": "¡Feliz miercoles! Ya mitad de semana, ¡mucho animo!"
+        },
+        {
+            "prompt": "feliz jueves",
+            "completion": "¡Feliz jueves! Casi es viernes. ¿Como te va?"
+        },
+        {
+            "prompt": "feliz viernes",
+            "completion": "¡Feliz viernes! Se viene el fin de semana."
+        },
+        {
+            "prompt": "feliz sabado",
+            "completion": "¡Feliz sabado! Disfruta tu dia libre."
+        },
+        {
+            "prompt": "feliz domingo",
+            "completion": "¡Feliz domingo! Relajate y recarga energias."
+        },
+        {
+            "prompt": "buen trabajo",
+            "completion": "¡Buen trabajo! Me alegra saber que estas avanzando."
+        },
+        {
+            "prompt": "excelente",
+            "completion": "¡Excelente! Si necesitas mas ayuda, aqui estoy."
+        },
+        {
+            "prompt": "gracias",
+            "completion": "¡De nada! Para eso estoy."
+        }
+    ]
+}
