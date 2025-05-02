@@ -31,15 +31,40 @@ Un pequeño chatbot basado en un Bidirectional LSTM con fallback por Jaccard, en
     ```bash
     git clone https://github.com/Erick-MC-Cedeno/Python-Text-Prediction-Model-Private
     ---
+
+    ## 📁 Estructura del bot diagrama
+![botdiagrama](./Diagrama/diagrama.png)
+
+---
+
+## 🔧 Configuración del entorno
+
+1. Clona este repositorio:
+    ```bash
+    git clone https://github.com/Erick-MC-Cedeno/Python-Text-Prediction-Model-Private
+
+2.     Ubicate en 
+   ```bash
     cd Python-Text-Prediction-Model-Private
     ```
 
-2. Instala las dependencias:
+3. Instala las dependencias:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Inicia el modelo de chatbot:
+4. Inicia el modelo de chatbot:
+    ```bash
+    python model.py
+    ```
+
+
+5. Instala las dependencias:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+6. Inicia el modelo de chatbot:
     ```bash
     python model.py
     ```
