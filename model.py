@@ -18,8 +18,6 @@ memory = OrderedDict()
 
 
 
-
-
 # CONFIGURACIÓN DE PARAMETROS
 VOCAB_SIZE       = 310
 EMBEDDING_DIM    = 100   
@@ -33,6 +31,7 @@ L2_RATE          = 1e-4
 JACCARD_THRESH   = 0.2
 VALIDATION_SPLIT = 0.2
 KFOLDS           = 5
+
 
 # FUNCIONES AUXILIARES ---
 def warmup_scheduler(epoch, lr):
@@ -103,7 +102,6 @@ seqs = tokenizer.texts_to_sequences(prompts_aug)
 padded_inputs = pad_sequences(seqs, maxlen=MAX_LEN, padding='post')
 
 
-
 # CODIFICACIÓN DE SALIDAS
 distinct_responses = sorted(set(completions_aug))
 resp2idx = {r:i for i,r in enumerate(distinct_responses)}
@@ -111,11 +109,9 @@ y_indices = np.array([resp2idx[c] for c in completions_aug])
 y_onehot = to_categorical(y_indices, num_classes=len(distinct_responses))
 
 
-
 # CARGA EMBEDDINGS SI LO DESEAS
 # EMBEDDING_MATRIX = load_fasttext('cc.es.300.vec', tokenizer.word_index, EMBEDDING_DIM)
 embedding_matrix = None
-
 
 
 # CONSTRUYE EL MODELO
@@ -209,6 +205,7 @@ def simulate_typing(text, delay=0.03):
         sys.stdout.flush()
         time.sleep(delay)
     print()
+
 
 # MAIN Y MEMORIA TEMPORAL
 if __name__ == '__main__':
