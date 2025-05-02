@@ -18,18 +18,19 @@ memory = OrderedDict()
 
 
 # CONFIGURACIÓN DE PARAMETROS
-VOCAB_SIZE       = 310
-EMBEDDING_DIM    = 100   
-MAX_LEN          = 12
-NUM_NEURONS      = 32
-EPOCHS           = 200
-BATCH_SIZE       = 8
-INITIAL_LR       = 3e-4   
-DROPOUT_RATE     = 0.5
-L2_RATE          = 1e-4
-JACCARD_THRESH   = 0.2
-VALIDATION_SPLIT = 0.2
-KFOLDS           = 5
+VOCAB_SIZE       = 310       # Sin cambios, este valor está bien para un vocabulario pequeño.
+EMBEDDING_DIM    = 100       # Mantener en 100, un tamaño estándar y adecuado.
+MAX_LEN          = 60        # Aumentamos MAX_LEN a 40 para cubrir frases más largas (ajustar según la longitud máxima de tus frases).
+NUM_NEURONS      = 32        # Mantener el número de neuronas en la capa LSTM.
+EPOCHS           = 100       # Reducido a 100 para evitar sobreajuste.
+BATCH_SIZE       = 16        # Tamaño de lote aumentado a 16 para mayor eficiencia.
+INITIAL_LR       = 2e-4      # Ajuste del learning rate a 2e-4.
+DROPOUT_RATE     = 0.5       # Mantener el dropout rate en 0.5.
+L2_RATE          = 1e-4      # Regularización L2 en 1e-4.
+JACCARD_THRESH   = 0.3       # Umbral de similitud Jaccard aumentado a 0.3.
+VALIDATION_SPLIT = 0.2       # Mantener 20% para la validación.
+KFOLDS           = 5         # Validación cruzada con 5 particiones.
+
 
 
 # FUNCIONES AUXILIARES ---

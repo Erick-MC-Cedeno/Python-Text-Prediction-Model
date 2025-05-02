@@ -21,6 +21,157 @@
       "intent": "saludos"
     },
     {
+      "prompt": "Que es un puerto en redes?",
+      "completion": "Un puerto en redes es un punto de comunicación a través del cual los dispositivos en una red intercambian datos. Cada puerto está asociado con un número y un servicio o aplicación. Ejemplo: Puerto 80 para HTTP.",
+      "intent": "redes"
+    },
+    {
+      "prompt": "Como hacer un escaneo de puertos con nmap?",
+      "completion": "Para escanear puertos con nmap, usa el comando: `nmap -p 1-65535 <ip>` para escanear todos los puertos o `nmap -p <puerto> <ip>` para escanear un puerto específico.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un RAT (Remote Access Trojan)?",
+      "completion": "Un RAT es un tipo de malware que permite el acceso remoto y control total de una computadora infectada. Puede ser usado para robar información o realizar actividades maliciosas de manera oculta.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque DDoS?",
+      "completion": "Un ataque DDoS (Distributed Denial of Service) es un ataque donde múltiples dispositivos envían un gran volumen de tráfico a un servidor o red para interrumpir su funcionamiento o hacerlo inaccesible.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un rootkit?",
+      "completion": "Un rootkit es un tipo de malware diseñado para obtener y mantener acceso no autorizado a un sistema informático, ocultando su presencia y las actividades maliciosas que realiza.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como proteger una red Wi-Fi?",
+      "completion": "Para proteger una red Wi-Fi, se recomienda usar una contraseña segura, habilitar WPA3, desactivar la difusión del SSID, y asegurarse de que el firmware del router esté actualizado.",
+      "intent": "redes"
+    },
+    {
+      "prompt": "Que es un ataque Man-in-the-Middle?",
+      "completion": "Un ataque Man-in-the-Middle (MITM) ocurre cuando un atacante intercepta y posiblemente altera la comunicación entre dos partes sin que lo sepan, lo que puede resultar en robo de datos o alteración de la información.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como hacer una auditoría de seguridad en una red?",
+      "completion": "Para realizar una auditoría de seguridad, se deben identificar los activos en la red, evaluar sus vulnerabilidades, realizar pruebas de penetración, analizar los registros y evaluar las políticas de seguridad.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un honeypot?",
+      "completion": "Un honeypot es una trampa diseñada para atraer y detectar intrusos, simulando ser una vulnerabilidad en un sistema o red. Permite estudiar las tácticas de los atacantes.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es el ataque de fuerza bruta?",
+      "completion": "Un ataque de fuerza bruta es un método de descifrado de contraseñas donde un atacante intenta todas las combinaciones posibles hasta encontrar la correcta.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como hacer un análisis forense digital?",
+      "completion": "El análisis forense digital involucra la recopilación, conservación y examen de pruebas digitales de manera que se pueda usar en investigaciones legales. Se deben seguir procedimientos establecidos para garantizar la integridad de las pruebas.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es el cifrado simétrico?",
+      "completion": "El cifrado simétrico es un tipo de cifrado donde la misma clave se utiliza tanto para cifrar como para descifrar la información.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un certificado SSL?",
+      "completion": "Un certificado SSL (Secure Socket Layer) es un protocolo de seguridad que cifra la comunicación entre un navegador y un servidor web, garantizando que la información transmitida no sea interceptada por terceros.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como realizar un ataque SQL Injection?",
+      "completion": "El ataque SQL Injection consiste en insertar o 'inyectar' código SQL malicioso en una consulta a una base de datos, con el objetivo de acceder o modificar datos sin autorización.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un ataque de phishing?",
+      "completion": "El phishing es un tipo de ataque en el que un atacante se hace pasar por una entidad confiable para engañar a las víctimas y obtener información confidencial, como contraseñas o datos bancarios.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de cross-site scripting (XSS) almacenado?",
+      "completion": "El XSS almacenado es una variante del ataque XSS donde el código malicioso se almacena permanentemente en el servidor, y se ejecuta cada vez que un usuario accede a una página afectada.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es una vulnerabilidad de deserialización?",
+      "completion": "Una vulnerabilidad de deserialización ocurre cuando un atacante manipula objetos deserializados para ejecutar código arbitrario o inyectar datos maliciosos en una aplicación.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de inyección LDAP?",
+      "completion": "Un ataque de inyección LDAP ocurre cuando un atacante manipula las consultas LDAP para acceder a información no autorizada o ejecutar acciones no deseadas en un servidor LDAP.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es una amenaza APT?",
+      "completion": "APT (Advanced Persistent Threat) es un tipo de ataque cibernético en el cual un atacante obtiene acceso prolongado y sigiloso a una red, con el objetivo de robar información o causar daños a largo plazo.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de denial of service (DoS)?",
+      "completion": "Un ataque DoS (Denial of Service) tiene como objetivo sobrecargar un sistema o servidor, dejándolo incapaz de responder a las solicitudes legítimas y causando interrupciones en el servicio.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de Cross-Site Request Forgery (CSRF)?",
+      "completion": "El CSRF es un ataque en el que un usuario autenticado es engañado para ejecutar una acción no deseada en una aplicación web, como cambiar su contraseña o realizar transferencias de dinero.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Como prevenir un ataque CSRF?",
+      "completion": "Para prevenir ataques CSRF, se recomienda usar tokens CSRF en los formularios, validar las solicitudes de origen y asegurarse de que las sesiones sean seguras.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un ataque de inyección XML?",
+      "completion": "La inyección XML es un ataque donde un atacante manipula solicitudes XML para modificar la estructura de los datos o hacer que el sistema ejecute comandos maliciosos.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es una vulnerabilidad XSS reflejada?",
+      "completion": "La vulnerabilidad XSS reflejada ocurre cuando un script malicioso inyectado se ejecuta inmediatamente en el navegador del usuario sin ser almacenado en el servidor.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un ataque de SQL Injection?",
+      "completion": "El ataque SQL Injection ocurre cuando un atacante inserta código SQL malicioso en una entrada de usuario para manipular la base de datos y robar o modificar datos.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Como prevenir un ataque SQL Injection?",
+      "completion": "Para prevenir un ataque SQL Injection, usa consultas parametrizadas, valida las entradas del usuario y emplea técnicas de escape de caracteres.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es una vulnerabilidad de desbordamiento de búfer?",
+      "completion": "El desbordamiento de búfer ocurre cuando un programa escribe más datos en un área de memoria de la que tiene asignada, lo que puede permitir la ejecución de código malicioso.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es el ataque de Clickjacking?",
+      "completion": "Clickjacking es un ataque donde un atacante oculta un enlace malicioso debajo de un elemento de una página web para engañar al usuario y hacer que haga clic en algo diferente de lo que pretendía.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Que es un ataque de DNS Spoofing?",
+      "completion": "El DNS Spoofing es un ataque en el que un atacante manipula las respuestas de un servidor DNS para redirigir a un usuario a un sitio web falso o malicioso.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de TCP SYN Flood?",
+      "completion": "Un ataque TCP SYN Flood es un tipo de ataque DDoS en el que un atacante envía solicitudes SYN incompletas a un servidor, agotando los recursos y causando que el servidor quede fuera de servicio.",
+      "intent": "seguridad"
+    },
+    
+    {
       "prompt": "Como te va?",
       "completion": "Todo bien, gracias. Y tu?",
       "intent": "saludos"
@@ -54,6 +205,56 @@
       "prompt": "Que puedes hacer?",
       "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
       "intent": "saludos"
+    },
+    {
+      "prompt": "Que es un ataque de spoofing?",
+      "completion": "El spoofing es un tipo de ataque donde un atacante falsifica su identidad para engañar a un sistema o a una persona, haciéndose pasar por una fuente confiable.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ataque de ARP poisoning?",
+      "completion": "El ARP poisoning es un ataque en el que un atacante envía mensajes falsificados de ARP (Address Resolution Protocol) para asociar su dirección MAC con la dirección IP de otro dispositivo en la red.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como detectar un ataque de Man-in-the-Middle?",
+      "completion": "Para detectar un ataque MITM, verifica los certificados SSL, revisa si hay cambios en las direcciones IP y usa herramientas como Wireshark para monitorear el tráfico sospechoso.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un honeypot en ciberseguridad?",
+      "completion": "Un honeypot es un sistema que simula vulnerabilidades para atraer a atacantes y estudiar sus métodos sin comprometer sistemas reales.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como proteger una red contra un ataque DDoS?",
+      "completion": "Para protegerse contra ataques DDoS, puedes usar servicios de mitigación como Cloudflare, configurar filtros de tráfico en tu firewall y usar redes de distribución de contenido (CDN).",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es un ransomware?",
+      "completion": "Un ransomware es un tipo de malware que cifra los archivos de un sistema y pide un rescate para liberarlos. A menudo se distribuye a través de correos electrónicos phishing o vulnerabilidades de software.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como evitar el phishing?",
+      "completion": "Para evitar el phishing, nunca hagas clic en enlaces sospechosos, verifica las URL antes de ingresar datos sensibles y usa autenticación de dos factores.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es una vulnerabilidad Zero-Day?",
+      "completion": "Una vulnerabilidad Zero-Day es una falla en el software que es desconocida para el proveedor y no tiene un parche disponible para corregirla, lo que la hace especialmente peligrosa para los usuarios.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que es el protocolo HTTPS?",
+      "completion": "HTTPS es una versión segura de HTTP, donde la 'S' significa 'Seguro'. Utiliza cifrado SSL/TLS para proteger la integridad y privacidad de los datos intercambiados entre el navegador y el servidor.",
+      "intent": "redes"
+    },
+    {
+      "prompt": "Que es un certificado digital?",
+      "completion": "Un certificado digital es un archivo utilizado para autenticar la identidad de una parte en una comunicación electrónica y garantizar la seguridad en la transmisión de datos mediante cifrado.",
+      "intent": "seguridad"
     },
     {
       "prompt": "Que haces?",
@@ -153,6 +354,56 @@
     {
       "prompt": "Que es un IDS?",
       "completion": "Un IDS (Intrusion Detection System) es un sistema que monitorea el trafico de red o actividad del sistema para detectar actividades maliciosas o violaciones de politicas.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Tengo problemas con mi red, como puedo saber si hay un ataque de spoofing?",
+      "completion": "Para detectar un posible ataque de spoofing, debes observar si hay tráfico extraño o conexiones no autorizadas. Utiliza herramientas como Wireshark para monitorear las direcciones MAC y las IPs que se comunican con tu red, buscando discrepancias.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Que hacer si sospecho que alguien esta manipulando el ARP en mi red?",
+      "completion": "Si sospechas que alguien está realizando un ataque ARP poisoning, puedes usar comandos como 'arp -a' para revisar la tabla ARP y verificar si hay direcciones IP y MAC sospechosas. Además, puedes utilizar herramientas como arpspoof para realizar un análisis más detallado.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como protegerme de un ataque Man-in-the-Middle cuando uso una red pública?",
+      "completion": "Para protegerte de un ataque MITM en una red pública, siempre utiliza una VPN para cifrar tu tráfico. Además, asegúrate de que los sitios web que visitas usen HTTPS, y evita conectarte a redes Wi-Fi abiertas sin cifrado.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Como puedo crear un honeypot en mi red para detectar intrusos?",
+      "completion": "Para crear un honeypot, puedes configurar un servidor o una máquina virtual que simule vulnerabilidades comunes. Luego, configura herramientas como Honeyd o Kippo para atraer y registrar la actividad de los atacantes. Asegúrate de que esté completamente aislado de tu red real para evitar riesgos.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "como puedo identificar un posible ataque DDoS en mi servidor?",
+      "completion": "Un ataque DDoS se puede identificar observando un aumento inesperado en el tráfico hacia tu servidor. Puedes usar herramientas como NetFlow o IDS/IPS para detectar picos en el tráfico, identificar direcciones IP sospechosas y bloquearlas antes de que sobrecarguen el sistema.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Recibí un correo extraño pidiendo dinero a cambio de desbloquear mis archivos, ¿es un ransomware?",
+      "completion": "Sí, parece un ataque de ransomware. Si no puedes acceder a tus archivos y te piden un rescate, lo más probable es que tus archivos hayan sido cifrados. No pagues el rescate, ya que no hay garantía de que tus archivos se desbloqueen. En lugar de eso, trata de restaurar tus archivos desde una copia de seguridad o usa herramientas de descifrado si están disponibles.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "¿Cómo puedo prevenir un ataque phishing en mi correo?",
+      "completion": "Para prevenir ataques de phishing, nunca hagas clic en enlaces de correos electrónicos sospechosos, verifica siempre la dirección del remitente, y utiliza un filtro de correo no deseado robusto. Además, es recomendable habilitar la autenticación de dos factores (2FA) para tus cuentas más sensibles.",
+      "intent": "seguridad"
+    },
+    {
+      "prompt": "Estaba escaneando una base de datos y encontré una vulnerabilidad SQL injection, ¿cómo puedo mitigarlo?",
+      "completion": "Para mitigar una vulnerabilidad SQL injection, asegúrate de utilizar consultas parametrizadas y evita concatenar entradas de usuarios directamente en las consultas SQL. También es importante validar y sanitizar todas las entradas antes de usarlas.",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "Al intentar acceder a un sitio, recibí un error de tipo XSS. ¿Qué significa eso?",
+      "completion": "Un error XSS significa que el sitio web es vulnerable a un ataque de Cross-Site Scripting, donde un atacante puede inyectar código malicioso en una página web. Esto puede permitir que se roben datos de los usuarios. La mejor forma de prevenirlo es sanitizando las entradas de los usuarios y utilizando Content Security Policy (CSP).",
+      "intent": "hacking"
+    },
+    {
+      "prompt": "¿Cuál es la diferencia entre un IDS y un IPS y cuándo debería usar cada uno?",
+      "completion": "Un IDS (Intrusion Detection System) se utiliza para detectar actividades maliciosas en una red o sistema, pero no bloquea el tráfico. Un IPS (Intrusion Prevention System) no solo detecta, sino que también previene los ataques bloqueando el tráfico sospechoso. Un IPS es más adecuado si deseas bloquear ataques en tiempo real, mientras que un IDS es útil para monitorear y analizar los incidentes.",
       "intent": "seguridad"
     },
     {
