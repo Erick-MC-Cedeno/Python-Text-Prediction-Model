@@ -17,7 +17,6 @@ from collections import OrderedDict
 memory = OrderedDict()
 
 
-
 # CONFIGURACIÓN DE PARAMETROS
 VOCAB_SIZE       = 310
 EMBEDDING_DIM    = 100   
