@@ -13,19 +13,23 @@ from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import KFold
 import time
 import sys
+from collections import OrderedDict
+memory = OrderedDict()
+
+
 
 
 
 # CONFIGURACIÓN DE PARAMETROS
-VOCAB_SIZE       = 300
+VOCAB_SIZE       = 310
 EMBEDDING_DIM    = 100   
 MAX_LEN          = 12
 NUM_NEURONS      = 32
-EPOCHS           = 80
+EPOCHS           = 200
 BATCH_SIZE       = 8
-INITIAL_LR       = 1e-4   
+INITIAL_LR       = 3e-4   
 DROPOUT_RATE     = 0.5
-L2_RATE          = 1e-3
+L2_RATE          = 1e-4
 JACCARD_THRESH   = 0.2
 VALIDATION_SPLIT = 0.2
 KFOLDS           = 5
@@ -206,13 +210,23 @@ def simulate_typing(text, delay=0.03):
         time.sleep(delay)
     print()
 
-
-# MAIN
+# MAIN Y MEMORIA TEMPORAL
 if __name__ == '__main__':
+    memory = OrderedDict()
     print("Chatbot listo. Escribe 'salir' para terminar.")
     while True:
-        msg = input("Tú: ")
-        if msg.lower() in ['salir', 'exit', 'quit']:
+        msg = input("Tú: ").strip().lower()
+        if msg in ['salir', 'exit', 'quit']:
             print("Bot: ¡Chao!")
             break
-        simulate_typing(generate_response(msg), delay=0.03)
+
+        # MEMORIA TEMPORAL
+        if msg in memory:
+            respuesta = memory[msg]
+        else:
+            respuesta = generate_response(msg)
+            if len(memory) >= 20:
+                memory.popitem(last=False) 
+            memory[msg] = respuesta
+
+        simulate_typing(respuesta, delay=0.03)
