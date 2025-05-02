@@ -30,7 +30,7 @@ Un pequeño chatbot basado en un Bidirectional LSTM con fallback por Jaccard, en
 1. Clona este repositorio:
     ```bash
     git clone https://github.com/Erick-MC-Cedeno/Python-Text-Prediction-Model-Private
-    ---
+
 
 1. Clona este repositorio:
     ```bash
