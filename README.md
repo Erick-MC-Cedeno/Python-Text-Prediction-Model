@@ -38,11 +38,11 @@ Un pequeño chatbot basado en un Bidirectional LSTM con fallback por Jaccard, en
     ```
 
 ## instalación de dependencias
-```bash
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
    ```
 
 ## iniciar modelo de chatbot
-```bash
-python model.py
-```
+   ```bash
+   python model.py
+   ```
