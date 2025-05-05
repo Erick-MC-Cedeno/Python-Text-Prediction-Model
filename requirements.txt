@@ -1,3 +1,4 @@
 tensorflow
 scikit-learn
 numpy
+spacy
