@@ -19,6 +19,8 @@ import pickle
 from collections import OrderedDict
 import spacy
 import os
+import re
+import math
 
 # Cargar modelo spaCy
 nlp = spacy.load("es_core_news_sm")
@@ -269,14 +271,126 @@ def simulate_typing(text, delay=0.03):
         time.sleep(delay)
     print()
 
+
+    # Agregar estas funciones al inicio del código
+def evaluate_math_expression(expr):
+    """Evalúa una expresión matemática segura"""
+    try:
+        # Reemplazar palabras comunes de operaciones
+        expr = expr.replace('×', '*').replace('x', '*').replace('÷', '/')
+        expr = expr.replace('^', '**').replace('por', '*').replace('entre', '/')
+        
+        # Eliminar caracteres no permitidos (seguridad)
+        safe_expr = re.sub(r"[^0-9+\-*/.()^ ]", "", expr)
+        
+        # Evaluar solo si la expresión limpia no está vacía
+        if safe_expr:
+            result = eval(safe_expr, {'__builtins__': None}, {'math': math})
+            return float(result) if isinstance(result, (int, float)) else result
+    except:
+        return None
+
+def contains_math_expression(text):
+    """Detecta si el texto contiene una expresión matemática"""
+    math_patterns = [
+        r'\d+\s*[\+\-\*\/x×÷]\s*\d+',  # Operaciones básicas
+        r'cuánto es (.*)\?',             # Preguntas directas
+        r'calcula (.*)',                 # Solicitudes de cálculo
+        r'resultado de (.*)',            # Peticiones de resultado
+        r'\d+\s*\^\s*\d+',               # Exponentes
+        r'raíz cuadrada de \d+',         # Raíces
+        r'\d+\s*\!'                      # Factoriales
+    ]
+    return any(re.search(pattern, text.lower()) for pattern in math_patterns)
+
+# Modificar la función generate_response para incluir el manejo matemático
+def generate_response(user_text):
+    # Primero verificar si es una pregunta matemática
+    if contains_math_expression(user_text):
+        # Extraer la expresión matemática
+        expr = re.search(r'(?:cuánto es|calcula|resultado de)\s*(.*?)\??$', 
+                         user_text.lower())
+        if expr:
+            math_expr = expr.group(1)
+        else:
+            math_expr = user_text
+        
+        result = evaluate_math_expression(math_expr)
+        
+        if result is not None:
+            # Formatear el resultado
+            if isinstance(result, float):
+                if result.is_integer():
+                    result = int(result)
+                else:
+                    result = round(result, 4)
+            
+            return f"El resultado de {math_expr} es {result}"
+        else:
+            return "No pude calcular esa expresión matemática. ¿Podrías formularla de otra manera?"
+    
+    # Luego intentar con razonamiento basado en similitud
+    response = reason_before_response(user_text)
+    if response:
+        return response
+
+    # Cargar modelo de nearest neighbors
+    with open('nn_model.pkl', 'rb') as f:
+        nn_model = pickle.load(f)
+    prompt_embeddings = np.load('prompt_embeddings.npy')
+
+    user_seq = tokenizer.texts_to_sequences([normalize_text(user_text)])[0]
+    user_embed = get_average_embedding(user_seq).reshape(1, -1)
+    distances, indices = nn_model.kneighbors(user_embed)
+
+    # Si hay alta similitud semántica, usar esa respuesta
+    if distances[0][0] < 0.3:
+        return completions_aug[indices[0][0]]
+
+    # Manejar texto vacío
+    if not user_seq:
+        return "Lo siento, no te entendí."
+
+    # Manejar mucho vocabulario desconocido
+    oov_ratio = sum(1 for i in user_seq if i == oov_index) / len(user_seq)
+    if oov_ratio > 0.4:
+        return "No entendí bien. ¿Podrías decirlo de otra forma?"
+
+    # Predecir con el modelo
+    pad = pad_sequences([user_seq], maxlen=MAX_LEN, padding='post')
+    pred = final_model.predict(pad, verbose=0)[0]
+
+    # Analizar las mejores predicciones
+    top_indices = pred.argsort()[-3:][::-1]
+    top_responses = [distinct_responses[i] for i in top_indices]
+    
+    # Si hay ambigüedad en las predicciones
+    if len(set(top_responses)) == 1:
+        return "¿Podrías ser más específico para poder ayudarte mejor?"
+
+    # Si la confianza es muy baja
+    if np.max(pred) < 0.3:
+        return "No estoy seguro de lo que quieres decir. ¿Podrías intentar reformular?"
+
+    # Devolver la respuesta con mayor probabilidad
+    idx = np.argmax(pred)
+    return distinct_responses[idx]
+
+def simulate_typing(text, delay=0.03):
+    for c in text:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
 # Interfaz de usuario
 if __name__ == '__main__':
     memory = OrderedDict()
-    print("Chatbot de Genética listo. Escribe 'salir' para terminar.")
+    print("Chatbot de Genética y Matemáticas listo. Escribe 'salir' para terminar.")
     while True:
         msg = input("Tú: ").strip().lower()
         if msg in ['salir', 'exit', 'quit']:
-            print("Bot: ¡Hasta luego! Espero haberte ayudado con tus dudas de genética.")
+            print("Bot: ¡Hasta luego! Espero haberte ayudado con tus dudas.")
             break
         if msg in memory:
             respuesta = memory[msg]

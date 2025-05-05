@@ -1,5 +1,157 @@
 {
   "conversations": [
+
+    {
+        "prompt": "Hola",
+        "completion": "Hola, ¿cómo estás?",
+        "intent": "saludos",
+        "pattern": [
+            "hola",
+            "buenas",
+            "saludos",
+            "que tal",
+            "como estas"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Muy bien gracias",
+        "completion": "Perfecto en que te puedo ayudar?",
+        "intent": "saludos",
+        "pattern": [
+            "muy bien",
+            "gracias",
+            "gracias",
+            "muchas gracias",
+            "muchas gracias"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Gracias",
+        "completion": "De nada algo mas en lo que pueda ayudarte?",
+        "intent": "saludos",
+        "pattern": [
+            "gracias",
+            "muchas gracias",
+            "muchas gracias",
+            "muy bien",
+            "gracias"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Hola, ¿qué tal?",
+        "completion": "Todo bien, gracias. ¿Y tú?",
+        "intent": "saludos",
+        "pattern": [
+            "hola",
+            "que tal",
+            "como estas",
+            "buenas tardes",
+            "buenas noches"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Buenos dias",
+        "completion": "Buenos dias, como te puedo ayudar hoy?",
+        "intent": "saludos",
+        "pattern": [
+            "buenos dias",
+            "buenas tardes",
+            "buenas noches",
+            "saludos",
+            "hola"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Buenas tardes",
+        "completion": "Buenas tardes, ¿en qué puedo ayudarte?",
+        "intent": "saludos",
+        "pattern": [
+            "buenas tardes",
+            "buenos dias",
+            "buenas noches",
+            "saludos",
+            "hola"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Buenas noches",
+        "completion": "Buenas noches, ¿en qué puedo ayudarte?",
+        "intent": "saludos",
+        "pattern": [
+            "buenas noches",
+            "buenos dias",
+            "buenas tardes",
+            "saludos",
+            "hola"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+
+        "prompt": "Como te llamas?",
+        "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
+        "intent": "saludos",
+        "pattern": [
+            "como te llamas",
+            "como te llama",
+            "que es tu nombre",
+            "que es tu nombre",
+            "cual es tu nombre"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Que puedes hacer?",
+        "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
+        "intent": "saludos",
+        "pattern": [
+            "que puedes hacer",
+            "que puedes hacer",
+            "puedo ayudarte",
+            "como puedo ayudarte",
+            "que puedo hacer"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+
+    {
+        "prompt": "Como estas",
+        "completion": "Estoy bien, gracias. Y tu?",
+        "intent": "saludos",
+        "pattern": [
+            "como estas",
+            "que tal",
+            "como estas",
+            "que tal",
+            "estoy bien"
+        ],
+        "task": "saludo",
+        "meaning": "inicio de conversacion amigable"
+    },
+    
       {
           "prompt": "ejercicio sobre herencia mendeliana",
           "completion": "En un cruce entre dos heterocigotos Aa, la probabilidad de que su descendencia herede el gen recesivo es del 25%. ¿Quieres practicar con otro ejemplo?",
