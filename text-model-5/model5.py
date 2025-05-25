@@ -25,17 +25,17 @@ nlp = spacy.load("es_core_news_sm")
 memory = OrderedDict()
 
 # Configuracion
-VOCAB_SIZE = 5000
-EMBEDDING_DIM = 100
-MAX_LEN = 60
-NUM_NEURONS = 32
-EPOCHS = 100
-BATCH_SIZE = 16
-INITIAL_LR = 2e-4
-DROPOUT_RATE = 0.5
-L2_RATE = 1e-4
-VALIDATION_SPLIT = 0.2
-KFOLDS = 5
+VOCAB_SIZE = 10000  # Aumentar el tamaño del vocabulario
+EMBEDDING_DIM = 200  # Incrementar la dimensión de los embeddings
+MAX_LEN = 80  # Aumentar la longitud máxima de las secuencias
+NUM_NEURONS = 64  # Incrementar el número de neuronas en la capa LSTM
+EPOCHS = 50  # Reducir el número de épocas para evitar sobreajuste
+BATCH_SIZE = 32  # Incrementar el tamaño del batch
+INITIAL_LR = 1e-3  # Ajustar la tasa de aprendizaje inicial
+DROPOUT_RATE = 0.4  # Reducir la tasa de dropout
+L2_RATE = 1e-5  # Reducir la regularización L2
+VALIDATION_SPLIT = 0.25  # Aumentar el porcentaje de datos para validación
+KFOLDS = 10  # Incrementar el número de particiones para validación cruzada
 
 # Funciones auxiliares
 def warmup_scheduler(epoch, lr):
@@ -99,9 +99,12 @@ with open('response_map.json', 'w') as f:
 def build_model():
     model = Sequential([
         Embedding(VOCAB_SIZE, EMBEDDING_DIM, input_length=MAX_LEN, mask_zero=True),
-        Bidirectional(LSTM(NUM_NEURONS, kernel_regularizer=l2(L2_RATE))),
-        BatchNormalization(),
+        Bidirectional(LSTM(NUM_NEURONS, return_sequences=True, kernel_regularizer=l2(L2_RATE))),
         Dropout(DROPOUT_RATE),
+        BatchNormalization(),
+        Bidirectional(LSTM(NUM_NEURONS, kernel_regularizer=l2(L2_RATE))),
+        Dropout(DROPOUT_RATE),
+        Dense(128, activation='relu', kernel_regularizer=l2(L2_RATE)),  # Capa adicional densa
         Dense(len(distinct_responses), activation='softmax', kernel_regularizer=l2(L2_RATE))
     ])
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=INITIAL_LR),
@@ -110,19 +113,10 @@ def build_model():
 
 callbacks = [
     ModelCheckpoint('best_model.keras', save_best_only=True, monitor='val_loss', verbose=1),
-    EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True, verbose=1),
-    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=1e-5, verbose=1),
+    EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True, verbose=1),  # Aumentar paciencia
+    ReduceLROnPlateau(monitor='val_loss', factor=0.3, patience=3, min_lr=1e-6, verbose=1),  # Ajustar reducción de LR
     LearningRateScheduler(warmup_scheduler)
 ]
-
-# KFold
-kf = KFold(n_splits=KFOLDS, shuffle=True, random_state=42)
-for train_idx, val_idx in kf.split(padded_inputs):
-    X_train, X_val = padded_inputs[train_idx], padded_inputs[val_idx]
-    y_train, y_val = y_onehot[train_idx], y_onehot[val_idx]
-    model = build_model()
-    model.fit(X_train, y_train, validation_data=(X_val, y_val),
-              epochs=EPOCHS, batch_size=BATCH_SIZE, callbacks=callbacks, verbose=2)
 
 # Entrenamiento final
 final_model = build_model()
@@ -189,15 +183,19 @@ def generate_response(user_text):
     pad = pad_sequences([user_seq], maxlen=MAX_LEN, padding='post')
     pred = final_model.predict(pad, verbose=0)[0]
 
-    top_indices = pred.argsort()[-3:][::-1]
-    top_responses = [distinct_responses[i] for i in top_indices]
+    top_index = np.argmax(pred)
+    top_response = distinct_responses[top_index]
 
-    if len(set(top_responses)) == 1:
-        return "Podrias ser mas especifico para poder ayudarte mejor?"
-    if np.max(pred) < 0.3:
-        return "No estoy seguro de lo que quieres decir. Podrias intentar reformular?"
+    # Buscar ejemplo asociado si existe y es técnico
+    for conv in data:
+        if conv['completion'] == top_response:
+            if conv['intent'] == "programacion":  # Solo incluir ejemplos para programación
+                example = conv.get('examples', [])
+                if example:
+                    return f"{top_response}\nEjemplo:\n{example[0]}"
+            break
 
-    return distinct_responses[np.argmax(pred)]
+    return top_response
 
 def simulate_typing(text, delay=0.03):
     for c in text:

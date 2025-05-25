@@ -10,9 +10,9 @@ import pickle
 import sys
 import time
 import math
+import spacy
 
 # Cargar modelo spaCy
-import spacy
 nlp = spacy.load("es_core_news_sm")
 
 # Cargar recursos
@@ -25,7 +25,11 @@ with open('response_map.json', 'r') as f:
         distinct_responses[int(i)] = r
 
 # Cargar modelo entrenado
-final_model = tf.keras.models.load_model('chatbot_model_final.keras')
+final_model = tf.keras.models.load_model('best_model.keras')
+
+# Cargar metadatos
+with open('metadata.json', 'r') as f:
+    metadata = json.load(f)
 
 # Configuración
 MAX_LEN = 60
@@ -40,8 +44,8 @@ def evaluate_math_expression(expr):
         if expr:
             result = eval(expr, {'__builtins__': None}, {'math': math})
             return float(result) if isinstance(result, (int, float)) else result
-    except:
-        return None
+    except Exception as e:
+        return f"Error al evaluar la expresión: {e}"
 
 def contains_math_expression(text):
     patterns = [
@@ -67,6 +71,8 @@ def generate_response(user_text):
         expr = re.search(r'(?:cuanto es|calcula|resultado de)\s*(.*?)\??$', user_text.lower())
         math_expr = expr.group(1) if expr else user_text
         result = evaluate_math_expression(math_expr)
+        if isinstance(result, str):  # Si hay un error en la evaluación
+            return result
         if result is not None:
             if isinstance(result, float):
                 result = int(result) if result.is_integer() else round(result, 4)
@@ -90,10 +96,23 @@ def generate_response(user_text):
     predicted_response = distinct_responses[predicted_index]
 
     # Opción: si la probabilidad es baja
-    if max_prob < 0.2:
+    if max_prob < 0.3:
         return "Todavía estoy aprendiendo y no entendí bien. ¿Podrías explicarlo diferente?"
 
-    return predicted_response
+    # Obtener metadatos asociados a la respuesta
+    response_metadata = metadata[predicted_index]
+    intent = response_metadata.get("intent", "Desconocido")
+    task = response_metadata.get("task", "No especificado")
+    meaning = response_metadata.get("meaning", "No definido")
+    examples = response_metadata.get("examples", [])
+
+    # Construir respuesta enriquecida
+    response_details = f"Intento: {intent}\nTarea: {task}\nSignificado: {meaning}"
+    if examples:
+        response_details += f"\nEjemplo: {examples[0]}"
+
+    # Respuesta final
+    return f"{predicted_response}\n\n{response_details}"
 
 # Simular escritura
 def simulate_typing(text, delay=0.03):
@@ -105,11 +124,17 @@ def simulate_typing(text, delay=0.03):
 
 # 💬 Interacción por consola
 if __name__ == "__main__":
-    print("Chatbot listo. Escribí algo (o 'salir' para terminar):")
+    print("Chatbot listo. Escribe algo (o 'salir' para terminar):")
     while True:
-        user_input = input("Vos: ")
-        if user_input.lower() in ['salir', 'exit', 'quit']:
-            print("Pura vida, hasta luego.")
+        try:
+            user_input = input("Vos: ")
+            if user_input.lower() in ['salir', 'exit', 'quit']:
+                print("Pura vida, hasta luego.")
+                break
+            response = generate_response(user_input)
+            simulate_typing("Bot: " + response)
+        except KeyboardInterrupt:
+            print("\nPura vida, hasta luego.")
             break
-        response = generate_response(user_input)
-        simulate_typing("Bot: " + response)
+        except Exception as e:
+            print(f"Error: {e}")

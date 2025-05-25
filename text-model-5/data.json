@@ -1,562 +1,138 @@
 {
   "conversations": [
-
     {
-        "prompt": "Hola",
-        "completion": "Hola, ¿cómo estás?",
-        "intent": "saludos",
-        "pattern": [
-            "hola",
-            "buenas",
-            "saludos",
-            "que tal",
-            "como estas"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Muy bien gracias",
-        "completion": "Perfecto en que te puedo ayudar?",
-        "intent": "saludos",
-        "pattern": [
-            "muy bien",
-            "gracias",
-            "gracias",
-            "muchas gracias",
-            "muchas gracias"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Gracias",
-        "completion": "De nada algo mas en lo que pueda ayudarte?",
-        "intent": "saludos",
-        "pattern": [
-            "gracias",
-            "muchas gracias",
-            "muchas gracias",
-            "muy bien",
-            "gracias"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Hola, ¿qué tal?",
-        "completion": "Todo bien, gracias. ¿Y tú?",
-        "intent": "saludos",
-        "pattern": [
-            "hola",
-            "que tal",
-            "como estas",
-            "buenas tardes",
-            "buenas noches"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Buenos dias",
-        "completion": "Buenos dias, como te puedo ayudar hoy?",
-        "intent": "saludos",
-        "pattern": [
-            "buenos dias",
-            "buenas tardes",
-            "buenas noches",
-            "saludos",
-            "hola"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Buenas tardes",
-        "completion": "Buenas tardes, ¿en qué puedo ayudarte?",
-        "intent": "saludos",
-        "pattern": [
-            "buenas tardes",
-            "buenos dias",
-            "buenas noches",
-            "saludos",
-            "hola"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Buenas noches",
-        "completion": "Buenas noches, ¿en qué puedo ayudarte?",
-        "intent": "saludos",
-        "pattern": [
-            "buenas noches",
-            "buenos dias",
-            "buenas tardes",
-            "saludos",
-            "hola"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-
-        "prompt": "Como te llamas?",
-        "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
-        "intent": "saludos",
-        "pattern": [
-            "como te llamas",
-            "como te llama",
-            "que es tu nombre",
-            "que es tu nombre",
-            "cual es tu nombre"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Que puedes hacer?",
-        "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
-        "intent": "saludos",
-        "pattern": [
-            "que puedes hacer",
-            "que puedes hacer",
-            "puedo ayudarte",
-            "como puedo ayudarte",
-            "que puedo hacer"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-
-    {
-        "prompt": "Como estas",
-        "completion": "Estoy bien, gracias. Y tu?",
-        "intent": "saludos",
-        "pattern": [
-            "como estas",
-            "que tal",
-            "como estas",
-            "que tal",
-            "estoy bien"
-        ],
-        "task": "saludo",
-        "meaning": "inicio de conversacion amigable"
-    },
-    
-      {
-          "prompt": "ejercicio sobre herencia mendeliana",
-          "completion": "En un cruce entre dos heterocigotos Aa, la probabilidad de que su descendencia herede el gen recesivo es del 25%. ¿Quieres practicar con otro ejemplo?",
-          "intent": "ejercicio",
-          "pattern": [
-              "practiquemos herencia",
-              "ejemplo de mendel",
-              "problema genetico",
-              "ejercicio de genes",
-              "practica genetica"
-          ],
-          "task": "resolver ejercicio",
-          "meaning": "solicitud de ejercicio práctico"
-      },
-      {
-          "prompt": "que es un alelo",
-          "completion": "un alelo es cada una de las versiones diferentes que puede tener un gen, como el alelo para ojos azules o marrones",
-          "intent": "genetica",
-          "pattern": [
-              "definicion alelo",
-              "que son los alelos",
-              "variantes geneticas",
-              "diferentes formas de un gen",
-              "alelos en genetica"
-          ],
-          "task": "definir concepto",
-          "meaning": "explicación sobre variantes genéticas"
-      },
-      {
-        "prompt": "como se puede modificar el ADN",
-        "completion": "Existen varias tecnicas para modificar ADN: 1) CRISPR-Cas9 (edicion precisa con guia de ARN), 2) TALENs (nucleasas programables), 3) Zinc Finger Nucleases (ZFN), y 4) Vectores virales (lentivirus/adenovirus para insercion genica). Quieres que detalle alguna en particular?",
-        "intent": "tecnicas_adn",
-        "pattern": [
-            "metodos para editar genes",
-            "tecnologias de modificacion genetica",
-            "como editar el genoma",
-            "formas de alterar el ADN",
-            "herramientas de ingenieria genetica"
-        ],
-        "task": "explicar tecnicas",
-        "meaning": "descripcion general de metodos de edicion genetica"
+      "prompt": "Hola",
+      "completion": "Hola, como estas?",
+      "intent": "saludos",
+      "pattern": ["hola", "buenas", "saludos", "que tal", "como estas"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": []
     },
     {
-        "prompt": "que es CRISPR-Cas9",
-        "completion": "CRISPR-Cas9 es un sistema de edicion genetica que usa una guia de ARN para dirigir la enzima Cas9 a cortar ADN especifico. Permite: 1) Eliminar genes defectuosos 2) Insertar nuevos genes 3) Corregir mutaciones. Es como unas 'tijeras moleculares' programables.",
-        "intent": "tecnicas_adn",
-        "pattern": [
-            "explicacion crispr",
-            "como funciona cas9",
-            "sistema crispr-cas9",
-            "edicion genetica con crispr",
-            "que son las tijeras geneticas"
-        ],
-        "task": "definir tecnologia",
-        "meaning": "explicacion detallada de CRISPR"
+      "prompt": "Muy bien gracias",
+      "completion": "Perfecto en que te puedo ayudar?",
+      "intent": "saludos",
+      "pattern": ["muy bien", "gracias", "muchas gracias"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": []
     },
     {
-        "prompt": "ejemplo de uso de vectores virales",
-        "completion": "En terapia genica para la hemofilia: se usa un vector viral (AAV) para llevar el gen del Factor IX funcional a celulas hepaticas. El virus modificado entrega el gen terapeutico pero no causa enfermedad, integrandolo en el ADN del paciente.",
-        "intent": "ejemplo_tecnico",
-        "pattern": [
-            "caso practico con vectores",
-            "aplicacion de virus modificados",
-            "ejemplo terapia genetica viral",
-            "uso de aav en medicina",
-            "demostracion vector viral"
-        ],
-        "task": "ilustrar aplicacion",
-        "meaning": "ejemplo concreto de tecnica"
+      "prompt": "Gracias",
+      "completion": "De nada algo mas en lo que pueda ayudarte?",
+      "intent": "saludos",
+      "pattern": ["gracias", "muchas gracias", "muy bien"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": []
     },
     {
-        "prompt": "que son los vectores en genetica",
-        "completion": "Los vectores son vehiculos para transportar ADN a celulas: 1) Plasmidos (anillos de ADN bacteriano) 2) Virus modificados (lentivirus, adenovirus) 3) Nanoparticulas. Deben tener: origen de replicacion, genes marcadores y sitio de clonacion.",
-        "intent": "conceptos_basicos",
-        "pattern": [
-            "definicion de vectores geneticos",
-            "transportadores de ADN",
-            "que se usa para insertar genes",
-            "herramientas de transferencia genetica",
-            "vehiculos para ingenieria genetica"
-        ],
-        "task": "explicar concepto",
-        "meaning": "descripcion de vectores geneticos"
+      "prompt": "Hola, que tal?",
+      "completion": "Todo bien, gracias. Y tu?",
+      "intent": "saludos",
+      "pattern": ["hola", "que tal", "como estas", "buenas tardes", "buenas noches"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Hola, que tal?\nBot: Todo bien, gracias. Y tu?"]
     },
     {
-        "prompt": "problema con TALENs",
-        "completion": "Disena TALENs para cortar el gen HBB humano (beta-globina): 1) Los dominios TALE deben reconocer secuencia 5'-TGGTGCACCTG-3' 2) Cada modulo reconoce 1 nucleotido (A=T, C=G) 3) La nucleasa FokI cortara entre las posiciones 6-7. Correcto? [Si/No]",
-        "intent": "ejercicio_tecnico",
-        "pattern": [
-            "ejercicio con talens",
-            "diseno de nucleasas",
-            "problema de ingenieria de proteinas",
-            "practica con editores geneticos",
-            "caso TALENs"
-        ],
-        "task": "resolver problema",
-        "meaning": "ejercicio practico con TALENs"
+      "prompt": "Buenos dias",
+      "completion": "Buenos dias, como te puedo ayudar hoy?",
+      "intent": "saludos",
+      "pattern": ["buenos dias", "buenas tardes", "buenas noches", "saludos", "hola"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Buenos dias\nBot: Buenos dias, como te puedo ayudar hoy?"]
     },
     {
-        "prompt": "es peligrosa la edicion genetica",
-        "completion": "La edicion genetica tiene riesgos: 1) Cortes no deseados (off-target) 2) Mosaicismo (no todas celulas editadas) 3) Efectos impredecibles. Pero con tecnicas como CRISPR Prime (mas precisa) y verificaciones genomicas se reducen estos riesgos considerablemente.",
-        "intent": "seguridad",
-        "pattern": [
-            "riesgos de modificar ADN",
-            "peligros de CRISPR",
-            "problemas eticos edicion genetica",
-            "efectos secundarios ingenieria genetica",
-            "que tan seguro es editar genes"
-        ],
-        "task": "analizar riesgos",
-        "meaning": "evaluacion de seguridad"
+      "prompt": "Buenas tardes",
+      "completion": "Buenas tardes, en que puedo ayudarte?",
+      "intent": "saludos",
+      "pattern": ["buenas tardes", "buenos dias", "buenas noches", "saludos", "hola"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Buenas tardes\nBot: Buenas tardes, en que puedo ayudarte?"]
     },
     {
-        "prompt": "que es la electroporacion",
-        "completion": "La electroporacion usa pulsos electricos para crear poros temporales en membranas celulares, permitiendo que ADN entre a celulas. Se usa para: 1) Transformar bacterias 2) Transfectar celulas eucariotas 3) Administrar terapia genetica in vivo.",
-        "intent": "tecnicas_adn",
-        "pattern": [
-            "metodo de transferencia electrica",
-            "tecnica de electrotransfeccion",
-            "como introducir ADN con electricidad",
-            "definicion electroporacion",
-            "transferencia genetica por pulsos"
-        ],
-        "task": "explicar tecnica",
-        "meaning": "descripcion de metodo fisico"
+      "prompt": "Buenas noches",
+      "completion": "Buenas noches, en que puedo ayudarte?",
+      "intent": "saludos",
+      "pattern": ["buenas noches", "buenos dias", "buenas tardes", "saludos", "hola"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Buenas noches\nBot: Buenas noches, en que puedo ayudarte?"]
     },
     {
-        "prompt": "comparar CRISPR y TALENs",
-        "completion": "CRISPR vs TALENs: 1) Precision: TALENs mas precisa pero menos flexible 2) Costo: CRISPR mas economico 3) Diseno: CRISPR usa ARN guia (facil diseno), TALENs requiere ingenieria de proteinas 4) Tamano: CRISPR mas pequeño para delivery viral.",
-        "intent": "comparacion",
-        "pattern": [
-            "diferencias entre editores geneticos",
-            "cual es mejor crispr o talens",
-            "ventajas y desventajas de tecnicas",
-            "comparacion tecnicas edicion",
-            "crispr versus talens"
-        ],
-        "task": "comparar tecnologias",
-        "meaning": "analisis comparativo"
+      "prompt": "Como te llamas?",
+      "completion": "Soy un asistente virtual creado para ayudarte. No tengo un nombre propio.",
+      "intent": "saludos",
+      "pattern": ["como te llamas", "como te llama", "que es tu nombre", "que es tu nombre", "cual es tu nombre"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Como te llamas?\nBot: Soy un asistente virtual creado para ayudarte. No tengo un nombre propio."]
     },
     {
-        "prompt": "ejemplo de knock-out genetico",
-        "completion": "Para hacer knock-out del gen CFTR (fibrosis quistica): 1) Disenar guias CRISPR para exon 2 2) Introducir sistema CRISPR-Cas9 en celulas 3) Seleccionar celulas con mutacion INDEL que desactive el gen 4) Verificar con secuenciacion y Western Blot.",
-        "intent": "ejemplo_tecnico",
-        "pattern": [
-            "caso de eliminacion genetica",
-            "ejemplo practico de knock-out",
-            "como silenciar un gen",
-            "demostracion de edicion genetica",
-            "procedimiento para desactivar gen"
-        ],
-        "task": "explicar protocolo",
-        "meaning": "ejemplo tecnico detallado"
+      "prompt": "Que puedes hacer?",
+      "completion": "Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica.",
+      "intent": "saludos",
+      "pattern": ["que puedes hacer", "que puedes hacer", "puedo ayudarte", "como puedo ayudarte", "que puedo hacer"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Que puedes hacer?\nBot: Puedo responder preguntas, dar informacion y ayudarte con tareas relacionadas con Linux y seguridad informatica."]
     },
     {
-        "prompt": "que es transfeccion",
-        "completion": "La transfeccion es introducir acidos nucleicos (ADN/ARN) a celulas eucariotas. Metodos: 1) Lipofeccion (uso de lipidos) 2) Calcio-fosfato 3) Electroporacion 4) Viral. Se usa para sobreexpresar genes o silenciarlos con RNA de interferencia.",
-        "intent": "conceptos_basicos",
-        "pattern": [
-            "definicion transfeccion",
-            "metodos para introducir ADN",
-            "que significa transfectar",
-            "tecnicas de transferencia genetica",
-            "como meter ADN a celulas"
-        ],
-        "task": "explicar concepto",
-        "meaning": "definicion tecnica basica"
+      "prompt": "Como estas",
+      "completion": "Estoy bien, gracias. Y tu?",
+      "intent": "saludos",
+      "pattern": ["como estas", "que tal", "como estas", "que tal", "estoy bien"],
+      "task": "saludo",
+      "meaning": "inicio de conversacion amigable",
+      "examples": ["Usuario: Como estas\nBot: Estoy bien, gracias. Y tu?"]
     },
     {
-        "prompt": "problema con plasmidos",
-        "completion": "Para clonar el gen GFP en pET-28a: 1) Cortar con EcoRI/XhoI 2) Ligar inserto GFP 3) Transformar E. coli 4) Seleccionar con kanamicina 5) Verificar con PCR (producto esperado: 720pb). En que paso podrias tener problemas? [Respuesta: Ligacion/Transformacion/Seleccion]",
-        "intent": "ejercicio_tecnico",
-        "pattern": [
-            "ejercicio de clonacion",
-            "problema con vectores plasmidicos",
-            "practica de ingenieria genetica",
-            "caso de clonado molecular",
-            "pregunta tecnica sobre plasmidos"
-        ],
-        "task": "resolver problema",
-        "meaning": "ejercicio practico de clonacion"
+      "prompt": "Como depuro un error de sintaxis en Python?",
+      "completion": "Revisa el mensaje de error, identifica la linea problematica y corrige la sintaxis. Utiliza un IDE que resalte los errores.",
+      "intent": "programacion",
+      "pattern": ["error de sintaxis", "depurar python", "python error", "corregir sintaxis"],
+      "task": "resolver problema",
+      "meaning": "consejos para depurar errores en Python",
+      "examples": [
+        "Usuario: Como depuro un error de sintaxis en Python?\nBot: Revisa el mensaje de error, identifica la linea problematica y corrige la sintaxis. Ejemplo:\n\nCódigo:\nprint('Hola mundo'\n\nError:\nSyntaxError: unexpected EOF while parsing\n\nCorrección:\nprint('Hola mundo')"
+      ]
     },
     {
-        "prompt": "que es Prime Editing",
-        "completion": "Prime Editing es una evolucion de CRISPR que permite: 1) Ediciones puntuales sin cortes de doble cadena 2) Inserciones/deleciones precisas 3) Todas transiciones y transversiones. Usa una Cas9 modificada y transcriptasa reversa guiada por PEgRNA (mas preciso que CRISPR estandar).",
-        "intent": "tecnicas_nuevas",
-        "pattern": [
-            "explicacion prime editing",
-            "que es pe-crispr",
-            "nueva generacion de edicion genetica",
-            "como funciona el editor prime",
-            "tecnologia mas precisa que crispr"
-        ],
-        "task": "explicar avance",
-        "meaning": "descripcion de tecnologia innovadora"
+      "prompt": "Como instalo un paquete en Python?",
+      "completion": "Puedes instalar paquetes con pip. Ejecuta 'pip install nombre_del_paquete' en tu terminal o linea de comandos.",
+      "intent": "programacion",
+      "pattern": ["instalar paquete python", "pip install", "agregar libreria python", "descargar paquete"],
+      "task": "instruir",
+      "meaning": "explicacion sobre instalacion de paquetes en Python",
+      "examples": [
+        "Usuario: Como instalo un paquete en Python?\nBot: Puedes instalar paquetes con pip. Ejemplo:\n\nComando:\npip install requests\n\nEsto instalará la librería 'requests' para realizar solicitudes HTTP."
+      ]
     },
     {
-        "prompt": "para que sirven los genes reporteros",
-        "completion": "Los genes reporteros (GFP, luciferasa, LacZ) sirven para: 1) Verificar expresion genetica 2) Optimizar protocolos de transfeccion 3) Identificar celulas modificadas 4) Medir actividad de promotores. GFP emite fluorescencia verde bajo luz UV, permitiendo visualizacion directa.",
-        "intent": "conceptos_basicos",
-        "pattern": [
-            "funcion de marcadores geneticos",
-            "uso de gfp en investigacion",
-            "que miden los reporteros",
-            "importancia de genes indicadores",
-            "ejemplos de genes reporteros"
-        ],
-        "task": "explicar utilidad",
-        "meaning": "aplicaciones practicas"
+      "prompt": "Como creo una funcion en Python?",
+      "completion": "Para crear una funcion en Python, usa la palabra clave 'def', seguida del nombre de la funcion y parentesis.",
+      "intent": "programacion",
+      "pattern": ["crear funcion python", "definir funcion", "funcion en python", "como usar def", "ejemplo de funcion"],
+      "task": "instruir",
+      "meaning": "explicacion sobre como definir funciones en Python",
+      "examples": [
+        "Usuario: Como creo una funcion en Python?\nBot: Para crear una funcion en Python, usa la palabra clave 'def'. Ejemplo:\n\nCódigo:\ndef saludar():\n    print('Hola mundo')\n\nLlamada:\nsaludar()"
+      ]
     },
     {
-        "prompt": "protocolo basico de PCR",
-        "completion": "Protocolo PCR estandar: 1) Desnaturalizacion (95°C, 30s) 2) Alineamiento (55-65°C, 30s) 3) Extension (72°C, 1min/kb) x30 ciclos. Necesitas: ADN molde, cebadores, dNTPs, Taq polimerasa y buffer con Mg2+. Quieres variantes como qPCR o RT-PCR?",
-        "intent": "tecnicas_basicas",
-        "pattern": [
-            "como hacer una pcr",
-            "pasos para reaccion en cadena",
-            "protocolo basico de amplificacion",
-            "que se necesita para pcr",
-            "explicacion tecnica pcr"
-        ],
-        "task": "describir protocolo",
-        "meaning": "guia tecnica basica"
-    },
-      {
-          "prompt": "explicame la transcripcion",
-          "completion": "la transcripción es el proceso donde se copia la información del ADN a ARN mensajero. Ocurre en el núcleo celular y es el primer paso para la síntesis de proteínas",
-          "intent": "genetica",
-          "pattern": [
-              "proceso de transcripcion",
-              "como se transcribe el adn",
-              "adn a arn",
-              "que pasa en la transcripcion",
-              "etapas de transcripcion"
-          ],
-          "task": "explicar proceso",
-          "meaning": "descripción del proceso de transcripción"
-      },
-      {
-          "prompt": "ejemplo de codominancia",
-          "completion": "En las flores de ciertas plantas, un alelo produce flores rojas y otro flores blancas. En codominancia, la planta heterocigota mostrará flores con manchas rojas y blancas, no rosadas.",
-          "intent": "ejercicio",
-          "pattern": [
-              "caso de codominancia",
-              "ejemplo codominante",
-              "herencia no mendeliana",
-              "ejercicio codominancia",
-              "ejemplo genetico especial"
-          ],
-          "task": "ilustrar concepto",
-          "meaning": "demostración de herencia no mendeliana"
-      },
-      {
-          "prompt": "que es el cariotipo",
-          "completion": "el cariotipo es el conjunto completo de cromosomas de un individuo, ordenados por tamaño y forma. Se usa para detectar anomalías genéticas como el síndrome de Down",
-          "intent": "genetica",
-          "pattern": [
-              "definicion cariotipo",
-              "analisis cromosomico",
-              "mapa genetico humano",
-              "cromosomas ordenados",
-              "estudio de cariotipo"
-          ],
-          "task": "explicar tecnica",
-          "meaning": "descripción de técnica genética"
-      },
-      {
-          "prompt": "problema de cruce genetico",
-          "completion": "Si cruzas una planta de guisantes alta (TT) con una baja (tt), toda la primera generación será alta heterocigota (Tt). En la segunda generación, habrá 75% altas (25% TT y 50% Tt) y 25% bajas (tt). ¿Quieres variar las condiciones?",
-          "intent": "ejercicio",
-          "pattern": [
-              "ejercicio de cruce",
-              "problema mendeliano",
-              "herencia de altura",
-              "ejemplo de cruce tt",
-              "practica con guisantes"
-          ],
-          "task": "resolver problema",
-          "meaning": "ejercicio práctico de genética"
-      },
-      {
-          "prompt": "que es la epigenetica",
-          "completion": "la epigenética estudia cambios en la expresión génica que no alteran la secuencia de ADN. Factores como dieta o estrés pueden activar/desactivar genes mediante metilación o modificaciones de histonas",
-          "intent": "genetica",
-          "pattern": [
-              "definicion epigenetica",
-              "modificaciones epigeneticas",
-              "herencia no secuencial",
-              "que afecta la expresion genica",
-              "metilacion del adn"
-          ],
-          "task": "explicar concepto",
-          "meaning": "introducción a mecanismos epigenéticos"
-      },
-      {
-          "prompt": "ejemplo de mutacion beneficiosa",
-          "completion": "La mutación CCR5-Δ32 confiere resistencia al VIH. Esta deleción de 32 pares de bases en el gen CCR5 impide que el virus entre en las células inmunitarias. Es común en poblaciones del norte de Europa.",
-          "intent": "ejemplo",
-          "pattern": [
-              "mutacion positiva",
-              "cambio genetico util",
-              "ejemplo evolucion",
-              "adaptacion genetica",
-              "mutacion ventajosa"
-          ],
-          "task": "ilustrar concepto",
-          "meaning": "ejemplo de mutación favorable"
-      },
-      {
-          "prompt": "que son los polimorfismos",
-          "completion": "los polimorfismos son variaciones comunes en la secuencia de ADN entre individuos (como SNPs). Afectan características como grupo sanguíneo o metabolismo de fármacos, pero generalmente no causan enfermedades",
-          "intent": "genetica",
-          "pattern": [
-              "definicion polimorfismo",
-              "variaciones geneticas normales",
-              "que son los snps",
-              "diferencias geneticas comunes",
-              "polimorfismos de nucleotido"
-          ],
-          "task": "explicar concepto",
-          "meaning": "descripción de variación genética normal"
-      },
-      {
-          "prompt": "problema de probabilidad genetica",
-          "completion": "Para padres AaBb x AaBb, la probabilidad de un hijo aabb es 1/16 (6.25%). Usamos el principio de multiplicación: 1/4 para aa x 1/4 para bb. ¿Quieres probar con otro genotipo parental?",
-          "intent": "ejercicio",
-          "pattern": [
-              "ejercicio dihibrido",
-              "problema de probabilidades",
-              "cruza aabb",
-              "calculo genetico",
-              "ejemplo de recombinacion"
-          ],
-          "task": "calcular probabilidad",
-          "meaning": "ejercicio de probabilidad genética"
-      },
-      {
-          "prompt": "que es la terapia genica",
-          "completion": "La terapia génica introduce ADN funcional para corregir defectos genéticos. Puede usar vectores virales para entregar genes terapéuticos. Se usa experimentalmente en enfermedades como la hemofilia o inmunodeficiencias",
-          "intent": "genetica",
-          "pattern": [
-              "definicion terapia genica",
-              "tratamiento con genes",
-              "correccion genetica",
-              "medicina genómica",
-              "aplicaciones terapeuticas"
-          ],
-          "task": "explicar aplicacion",
-          "meaning": "descripción de aplicación médica"
-      },
-      {
-          "prompt": "ejemplo de herencia ligada al sexo",
-          "completion": "El daltonismo rojo-verde es un ejemplo clásico. El gen está en el cromosoma X: las mujeres necesitan dos copias defectuosas (XᴰXᴰ) mientras que los hombres solo una (XᴰY) para manifestarlo, por eso es más común en hombres",
-          "intent": "ejemplo",
-          "pattern": [
-              "caso ligado al cromosoma x",
-              "ejemplo herencia sexual",
-              "problema de daltonismo",
-              "gen en cromosoma sexual",
-              "ejercicio x-linked"
-          ],
-          "task": "ilustrar herencia",
-          "meaning": "ejemplo de herencia ligada al sexo"
-      },
-      {
-          "prompt": "que es el proyecto genoma humano",
-          "completion": "Fue un esfuerzo internacional (1990-2003) para secuenciar todo el ADN humano. Identificó ~20,500 genes y permitió avances en medicina personalizada, estudios evolutivos y comprensión de enfermedades",
-          "intent": "genetica",
-          "pattern": [
-              "definicion proyecto genoma",
-              "secuenciacion del adn humano",
-              "investigacion genetica mundial",
-              "mapeo genetico humano",
-              "resultados del genoma"
-          ],
-          "task": "explicar proyecto",
-          "meaning": "contexto histórico y científico"
-      },
-      {
-          "prompt": "problema de grupos sanguineos",
-          "completion": "Si una madre tipo O (ii) y padre tipo AB (IᴬIᴮ) tienen hijos: 50% serán A (Iᴬi) y 50% B (Iᴮi). Ninguno será AB u O. ¿Quieres analizar otra combinación parental?",
-          "intent": "ejercicio",
-          "pattern": [
-              "ejercicio abo",
-              "problema de sangre",
-              "herencia de grupos sanguineos",
-              "cruza genetica sanguinea",
-              "ejemplo sistema abo"
-          ],
-          "task": "resolver problema",
-          "meaning": "ejercicio práctico de herencia"
-      },
-      {
-          "prompt": "que es un organismo transgenico",
-          "completion": "Es un ser vivo con ADN modificado mediante ingeniería genética, como el maíz Bt que produce una toxina bacteriana contra plagas. Se usan en agricultura, investigación y producción de medicamentos",
-          "intent": "genetica",
-          "pattern": [
-              "definicion transgenico",
-              "organismo modificado geneticamente",
-              "ejemplos ogm",
-              "que es un gmo",
-              "aplicaciones transgenicas"
-          ],
-          "task": "explicar concepto",
-          "meaning": "introducción a organismos modificados"
-      }
+      "prompt": "Como uso un bucle for en Python?",
+      "completion": "Un bucle 'for' en Python se usa para iterar sobre una secuencia (como una lista o rango).",
+      "intent": "programacion",
+      "pattern": ["usar bucle for", "for loop python", "iterar en python", "ejemplo de bucle", "como usar for"],
+      "task": "instruir",
+      "meaning": "explicacion sobre como usar bucles for en Python",
+      "examples": [
+        "Usuario: Como uso un bucle for en Python?\nBot: Un bucle 'for' se usa para iterar sobre elementos. Ejemplo:\n\nCódigo:\nfrutas = ['manzana', 'banana', 'cereza']\nfor fruta in frutas:\n    print(fruta)\n\nSalida:\nmanzana\nbanana\ncereza"
+      ]
+    }
   ]
 }
